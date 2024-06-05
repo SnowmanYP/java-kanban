@@ -1,0 +1,31 @@
+
+œ
+java:S1104"TMake subTasks a static final constant or non-public and provide accessors if needed.(˜´Á¥øÿÿÿÿ8¤õâŸş1J$cf2e0ec7-ea93-4e4b-9599-824ec57427af
+­
+java:S1319"eThe type of "subTasks" should be an interface such as "Map" rather than the implementation "HashMap".(˜´Á¥øÿÿÿÿ8¤õâŸş1J$b0f8cc01-6ff5-4a66-a827-d61123bade78
+„
+java:S4973"<Strings and Boxed types should be compared using "equals()".(ÖÖùÿÿÿÿ8¤õâŸş1J$0d2c5440-e990-4942-bc29-6503b9651a31
+„
+java:S4973f"<Strings and Boxed types should be compared using "equals()".(ôı£»şÿÿÿÿ8¤õâŸş1J$435bf821-9c00-48bc-9879-c9f9500d7ac6
+]
+java:S1220""Move this file to a named package.8¤õâŸş1J$f363ee2a-0a24-48cf-9b90-78a5d9c444c8
+_
+java:S1700"Rename field "subTasks"(˜´Á¥øÿÿÿÿ8¥õâŸş1J$8dedfd38-df6d-4a28-bd6c-1fb057741b7d
+l	java:S106"+Replace this use of System.out by a logger.(Ã‘Ã-8«õâŸş1J$35916d9f-0dde-454b-93a4-2bbf0bc0fea9
+r	java:S106"+Replace this use of System.out by a logger.(ÍñÀ÷ûÿÿÿÿ8¬õâŸş1J$9bbc526c-a073-481c-ba76-f853c3839ced
+r	java:S106"+Replace this use of System.out by a logger.(ŸÁÇüÿÿÿÿ8¬õâŸş1J$a009bfb9-d76e-4b27-a734-a3ed1e2ba673
+m	java:S106"+Replace this use of System.out by a logger.(ù‰­8¬õâŸş1J$fa3d69b2-b411-4e40-96cf-abfc4fd0a0f6
+l	java:S106"+Replace this use of System.out by a logger.(ê°Ím8¬õâŸş1J$62f475b7-641d-4506-9a7b-986392d55091
+m	java:S106 "+Replace this use of System.out by a logger.(æ¯×ˆ8­õâŸş1J$1fefaf51-4ce7-4bb4-b812-795d7af08ba6
+|
+java:S2864""4Iterate over the "entrySet" instead of the "keySet".(˜¿Šÿÿÿÿÿ8­õâŸş1J$047ace17-0985-4594-bfb4-9a1462d51073
+r	java:S106#"+Replace this use of System.out by a logger.(Ç¶şıÿÿÿÿ8­õâŸş1J$762b5687-422c-4b5c-b983-77a4cd18a3e6
+r	java:S106,"+Replace this use of System.out by a logger.(½„öüÿÿÿÿ8­õâŸş1J$1d39fca4-c31e-4644-96b9-0aa7e250a7df
+m	java:S1061"+Replace this use of System.out by a logger.(É¹ÌÂ8®õâŸş1J$6c7aa52b-316f-4cb0-b031-03b0abd8ab36
+m	java:S1065"+Replace this use of System.out by a logger.(…±¡ñ8®õâŸş1J$d244a89a-36c1-4fa8-9f5f-5b3a27569bf4
+~	java:S125;"<This block of commented-out lines of code should be removed.(ÅÛº8°õâŸş1J$ed4fa5a9-58c2-44bb-944f-da5798be7ca0
+l	java:S106T"+Replace this use of System.out by a logger.(ô˜8°õâŸş1J$ffd266b3-9f80-437f-abea-23af458f51df
+r	java:S106]"+Replace this use of System.out by a logger.(â›º¬ıÿÿÿÿ8°õâŸş1J$c8fceda9-c7a9-46a4-b275-24d7fd8dc2f0
+ƒ	java:S125`"<This block of commented-out lines of code should be removed.( ÉËÙûÿÿÿÿ8°õâŸş1J$afec4155-b593-4f28-be71-b61898841ccf
+r	java:S106j"+Replace this use of System.out by a logger.(Ã•ëıûÿÿÿÿ8°õâŸş1J$0889eb71-01f4-4f10-bb98-5c15cc0cd10a
+r	java:S106l"+Replace this use of System.out by a logger.(Š‡Ëèûÿÿÿÿ8°õâŸş1J$143d2a69-a50b-4770-a120-c7e9404edf79

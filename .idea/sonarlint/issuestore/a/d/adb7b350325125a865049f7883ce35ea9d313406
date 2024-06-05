@@ -1,0 +1,17 @@
+
+]
+java:S1220""Move this file to a named package.8œÎ—ş1J$e8acde5a-f101-4d5f-a781-639d72aa11bb
+Y
+java:S1700"Rename field "ID"(ˆ¢ÓÎûÿÿÿÿ8Î—ş1J$18449f6e-24b1-4da9-972d-759770f2d78e
+•
+java:S3008"MRename this field "ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¢ÓÎûÿÿÿÿ8Î—ş1J$547ee30b-9d8f-4f03-ae62-c8061d7f2aee
+—
+java:S4144	"TUpdate this method so that its implementation is not identical to "getID" on line 4.(…¯åÄ8Î—ş1J$57851a91-834a-4966-94ac-879190438c20
+‚
+java:S1118":Add a private constructor to hide the implicit public one.(²Ñ°¹ûÿÿÿÿ8Î—ş1J$37f92828-df9e-4266-85fd-7c46cebd71b0
+ˆ
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ì–ˆ8ŸÎ—ş1J$f6f2cc1b-189c-436f-8349-7e4155748d4c
+ˆ
+java:S1124	"EReorder the modifiers to comply with the Java Language Specification.(…¯åÄ8ŸÎ—ş1J$18625d52-d557-4297-afb7-7e40441a3de2
+m
+java:S1068"*Remove this unused "epicID" private field.(û»ÙÚ8¡Î—ş1J$c62db8cc-d04c-4160-9a4b-914af299ae80

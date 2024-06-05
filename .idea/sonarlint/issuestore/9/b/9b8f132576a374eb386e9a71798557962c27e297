@@ -1,0 +1,34 @@
+
+
+java:S1104"UMake epicTasks a static final constant or non-public and provide accessors if needed.(‹á˜óÿÿÿÿÿ8™¢›¾ş1J$1144d436-5174-4d2f-be50-114d6de9e83e
+œ
+java:S1104"TMake subTasks a static final constant or non-public and provide accessors if needed.(¼¦Ë·øÿÿÿÿ8™¢›¾ş1J$3fa33cd3-1e8f-4f8c-92e3-5785bacadffa
+„
+java:S4973#"<Strings and Boxed types should be compared using "equals()".(æÖÛÉıÿÿÿÿ8ƒîÓ¾ş1J$8c7a840d-02f0-466b-9dcc-bfbd3c498da3
+„
+java:S4973V"<Strings and Boxed types should be compared using "equals()".(ı×š‹üÿÿÿÿ8ƒîÓ¾ş1J$7a6efb00-7bac-4fd4-86e9-9c3ee540831a
+]
+java:S1220""Move this file to a named package.8™¢›¾ş1J$0c8a409b-616c-4f54-b92a-0fc2ae925a9d
+w
+java:S1444"/Make this "public static epicTasks" field final(‹á˜óÿÿÿÿÿ8š¢›¾ş1J$9141e85b-c058-4a81-8222-d6d523de1c40
+v
+java:S1444".Make this "public static subTasks" field final(¼¦Ë·øÿÿÿÿ8š¢›¾ş1J$9d853ccb-a70d-4533-b50a-486f17b65d51
+~	java:S125"<This block of commented-out lines of code should be removed.(¿”ÖÇ8¢›¾ş1J$0c935766-f6ec-43a6-aa20-112ddb7c8822
+r	java:S106'"+Replace this use of System.out by a logger.(æä”Ùùÿÿÿÿ8ŠîÓ¾ş1J$a05366c1-bef1-4503-8e6a-9d9b90a7a66e
+m	java:S106)"+Replace this use of System.out by a logger.(Õ†òÔ8ŠîÓ¾ş1J$d6bf3b8e-6912-44e1-a0d5-a986407351ca
+m	java:S106/"+Replace this use of System.out by a logger.(ù‰­8ŠîÓ¾ş1J$573da356-2c71-4147-895d-283e20e09ba3
+m	java:S1062"+Replace this use of System.out by a logger.(Æı¼Ä8ŠîÓ¾ş1J$b22d1832-13eb-4296-bd6e-53aa48fb6269
+m	java:S1067"+Replace this use of System.out by a logger.(¡ƒÉû8‹îÓ¾ş1J$509e2048-dc82-4a8a-9be4-1e7db6c78a56
+l	java:S106:"+Replace this use of System.out by a logger.(ŠÅ‡l8‹îÓ¾ş1J$39b80554-4cc7-4605-8e5a-66997901a9c5
+m	java:S106B"+Replace this use of System.out by a logger.(ø€ ã8‹îÓ¾ş1J$7b49f39e-7e0c-4556-b446-484b5ae2f599
+m	java:S106G"+Replace this use of System.out by a logger.(É¹ÌÂ8ŒîÓ¾ş1J$518e0fec-a981-4fe1-9878-b3e4a228feeb
+m	java:S106K"+Replace this use of System.out by a logger.(…±¡ñ8ŒîÓ¾ş1J$81a59e9f-a7ab-49c4-91ff-04c0add1e485
+r	java:S106S"+Replace this use of System.out by a logger.(â›º¬ıÿÿÿÿ8ŒîÓ¾ş1J$c29f603d-defc-44d4-9f9f-59ace0f7788f
+m	java:S106Z"+Replace this use of System.out by a logger.(¯á‡8ŒîÓ¾ş1J$0b211163-3340-4852-b085-80177eed6dd4
+r	java:S106\"+Replace this use of System.out by a logger.(ÖİÒßşÿÿÿÿ8ŒîÓ¾ş1J$b81716c1-a9f4-41a1-8680-99182d59c123
+r	java:S106d"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ8îÓ¾ş1J$0c34c12f-5720-445a-af48-1ed455982a26
+m	java:S106h"+Replace this use of System.out by a logger.(À­ã…8îÓ¾ş1J$76c32c9c-feb7-405b-ba6f-66046b8e11e0
+l	java:S106l"+Replace this use of System.out by a logger.(°¤°8îÓ¾ş1J$0bf12f66-6595-4d7e-96d0-ddfc71239372
+r	java:S106p"+Replace this use of System.out by a logger.(âø¤·ùÿÿÿÿ8îÓ¾ş1J$fe1a33d2-a8ff-4656-87c3-7a7056850614
+r	java:S106u"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ8îÓ¾ş1J$a46c8ad4-5e57-4fac-a008-b0f891ad840e
+l	java:S106y"+Replace this use of System.out by a logger.(°¤°8îÓ¾ş1J$af2b25d6-0986-42b6-bdf0-7e905d327baf

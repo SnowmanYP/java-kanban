@@ -1,0 +1,31 @@
+
+Ÿ
+java:S1104"WMake middleTasks a static final constant or non-public and provide accessors if needed.(´Ã™—øÿÿÿÿ8ê‘ã—þ1J$86bcf611-f0c6-49da-80ac-204fdc1a52ce
+°
+java:S1319"hThe type of "middleTasks" should be an interface such as "Map" rather than the implementation "HashMap".(´Ã™—øÿÿÿÿ8ê‘ã—þ1J$72198616-db94-42de-a47e-db2c763f50c4
+„
+java:S4973"<Strings and Boxed types should be compared using "equals()".(æÖÛÉýÿÿÿÿ8ê‘ã—þ1J$63e2f57f-70f8-403f-9aee-5555a21b7475
+„
+java:S4973;"<Strings and Boxed types should be compared using "equals()".(ý×š‹üÿÿÿÿ8‹¹ã—þ1J$85545320-4f5a-4b92-9e03-baab7a39b1be
+]
+java:S1220""Move this file to a named package.8ê‘ã—þ1J$3fc6589a-f17f-4565-85bc-5bb2e9e55376
+r	java:S106"+Replace this use of System.out by a logger.(æä”Ùùÿÿÿÿ8ï‘ã—þ1J$3dff7829-a9ba-4853-89ae-2e67c788d2f9
+m	java:S106"+Replace this use of System.out by a logger.(Õ†òÔ8ï‘ã—þ1J$4ef425ed-6e89-4e3e-88d7-846264a52dc2
+m	java:S106"+Replace this use of System.out by a logger.(ù‰­ž8ï‘ã—þ1J$74d6a779-fdab-445b-be12-78d7d16b9973
+m	java:S106"+Replace this use of System.out by a logger.(Æý¼Ä8ð‘ã—þ1J$d4128799-b383-4d50-8425-49d0a63413b5
+m	java:S106"+Replace this use of System.out by a logger.(¡ƒÉû8ð‘ã—þ1J$1610d97e-043d-44bd-9224-86970fe4219b
+w
+java:S2864"4Iterate over the "entrySet" instead of the "keySet".(ã¼8ð‘ã—þ1J$82a3ddff-1dd9-4469-a83e-449cfcc20c0a
+l	java:S106"+Replace this use of System.out by a logger.(ŠÅ‡l8ð‘ã—þ1J$58535abe-c5e5-4a47-a4d3-73bd8e5a408f
+m	java:S106'"+Replace this use of System.out by a logger.(ø€ ã8ò‘ã—þ1J$21c217f2-bcd0-4638-a127-659998d66f43
+m	java:S106,"+Replace this use of System.out by a logger.(É¹ÌÂ8ò‘ã—þ1J$d4bd4964-0204-42c0-94d4-a511e765cc88
+m	java:S1060"+Replace this use of System.out by a logger.(…±¡ñ8ó‘ã—þ1J$a354abb8-c47f-4570-858c-7099b1d9c137
+r	java:S1068"+Replace this use of System.out by a logger.(â›º¬ýÿÿÿÿ8ó‘ã—þ1J$3e083264-d7ab-4157-9118-4b7491fd4446
+m	java:S106?"+Replace this use of System.out by a logger.(¯á‡8ó‘ã—þ1J$619b3b2b-9c5b-41fc-b954-526365404840
+r	java:S106A"+Replace this use of System.out by a logger.(ÖÝÒßþÿÿÿÿ8ó‘ã—þ1J$e5b8ae90-d1d9-4ed4-bfd3-0c79ab1dda46
+r	java:S106I"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ8ô‘ã—þ1J$92c524c0-db8c-4831-9ea3-91b4ae8d6d1c
+m	java:S106M"+Replace this use of System.out by a logger.(À­ã…8ô‘ã—þ1J$b250e14e-f191-4f12-96df-59a627b53f92
+l	java:S106Q"+Replace this use of System.out by a logger.(°¤°8ô‘ã—þ1J$c51fd2dd-4257-438b-b684-b30deb8fa90e
+r	java:S106U"+Replace this use of System.out by a logger.(âø¤·ùÿÿÿÿ8ô‘ã—þ1J$07b791a6-b495-49fa-9267-d5a5e16e3eb7
+r	java:S106Z"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ8–¹ã—þ1J$bf2a9b3b-765d-4cc4-94ad-6019cb76969f
+l	java:S106^"+Replace this use of System.out by a logger.(°¤°8îõƒœþ1J$899ab1d3-a59a-4dd7-baa8-d816e86653eb
