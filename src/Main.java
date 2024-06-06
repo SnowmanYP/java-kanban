@@ -10,13 +10,5 @@ d. Создание. Сам объект должен передаваться �
 e. Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.
 f. Удаление по идентификатору.*/
 public class Main {
-    public static void main(String[] args) {
-        Tasks tasks=new Tasks();
-        tasks.addMiddleTask("Первая задача", "Описание", Status.NEW, Hierarchy.MIDDLE);
-        tasks.addMiddleTask("Вторая задача", "Описание", Status.IN_PROGRESS, Hierarchy.MIDDLE);
-        tasks.addMiddleTask("Третья задача", "Описание", Status.DONE, Hierarchy.MIDDLE);
 
-        tasks.printAllMiddleTask();
-        tasks.printOneTask(tasks.getMiddleTask(2));
-    }
 }

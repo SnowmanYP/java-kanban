@@ -1,4 +1,3 @@
-import java.awt.print.Book;
 import java.util.Objects;
 
 public class Task {
@@ -8,9 +7,8 @@ public class Task {
     Status status; //Статус задачи
     Hierarchy hierarchy; //Тип задачи
 
-//        public Task(){}
+
         public Task(String taskName, String description, Status status, Hierarchy hierarchy) {
-        //this.id=id;
         this.taskName = taskName;
         this.description = description;
         this.status = status;
@@ -21,7 +19,6 @@ public class Task {
     public boolean equals(Object obj){
     if (this==obj) return true;
     if (obj==null || getClass()!=obj.getClass()) return false;
-    //Task otherTask=(Task) obj;
     return Objects.equals(id,((Task) obj).id);
     }
 

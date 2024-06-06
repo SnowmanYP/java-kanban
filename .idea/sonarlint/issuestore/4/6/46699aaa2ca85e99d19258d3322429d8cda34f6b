@@ -1,37 +1,0 @@
-
-š
-java:S1104"WMake middleTasks a static final constant or non-public and provide accessors if needed.(·ë€8¿˜Ãı1J$49bf5376-35da-494c-9bbb-a6e62ed1b257
-«
-java:S1319"hThe type of "middleTasks" should be an interface such as "Map" rather than the implementation "HashMap".(·ë€8¿˜Ãı1J$e032597d-a1b5-4799-a47a-d380b090c3e8
-]
-java:S1220""Move this file to a named package.8¿˜Ãı1J$fe6d71c2-20f1-46dd-8152-4efad6933e93
-t
-java:S1444"1Make this "public static middleTasks" field final(·ë€8Á˜Ãı1J$6c1ee2a1-8630-4e19-8e29-70e29451b042
-Ü
-java:S1192F"“Define a constant instead of duplicating this literal "Ğ¡Ğ¿Ğ¸ÑĞºĞ° Ğ·Ğ°Ğ´Ğ°Ñ‡ Ğ½Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚ Ğ¸Ğ»Ğ¸ ÑĞ¿Ğ¸ÑĞ¾Ğº Ğ¿ÑƒÑÑ‚Ğ¾Ğ¹" 3 times.(—µ£­øÿÿÿÿ8Á˜Ãı1J$dce14d79-2c79-41a8-90fb-cdcaedc69355
-”
-java:S1192	"QDefine a constant instead of duplicating this literal "ĞĞ¿Ğ¸ÑĞ°Ğ½Ğ¸Ğµ" 3 times.(Ê’‹Ø8Á˜Ãı1J$8d00b1e5-6916-4d9e-845a-cedee5afde4e
-`
-java:S2386"Make this member "protected".(·ë€8Ã˜Ãı1J$733386c6-d6be-445b-8ed4-5b4199755ae3
-~	java:S125"<This block of commented-out lines of code should be removed.(ëâ¢Í8Æ˜Ãı1J$cba81d76-3389-4661-a689-e06592ea953a
-~	java:S125"<This block of commented-out lines of code should be removed.(¶”Š†8Æ˜Ãı1J$dfb3aba9-5de7-48b3-aab3-ffc5da9582a5
-~	java:S125"<This block of commented-out lines of code should be removed.(—ç…¢8Ç˜Ãı1J$9eb361dd-ce2d-49db-b6d1-a2888b2f6ca2
-~	java:S125"<This block of commented-out lines of code should be removed.(È¥’”8Ç˜Ãı1J$a1e0a068-0bfd-4d20-8bb0-9b7a6254bb54
-}	java:S125"<This block of commented-out lines of code should be removed.(ù£»q8Ç˜Ãı1J$6a82ca51-dfe0-4a00-ad5a-6189d96c77d1
-ƒ	java:S125"<This block of commented-out lines of code should be removed.(üÅ™ÿÿÿÿÿ8Ç˜Ãı1J$4d2e828e-ea91-4a3c-a495-e9b9e258bcc1
-}	java:S125"<This block of commented-out lines of code should be removed.(èñù8Ç˜Ãı1J$7b07b4c3-6059-4fe7-b59a-b238dfaab7e5
-ƒ	java:S125!"<This block of commented-out lines of code should be removed.(ÒâŒøÿÿÿÿ8Ç˜Ãı1J$fb8fbd8c-84f4-4554-b203-f184b865462d
-r	java:S106-"+Replace this use of System.out by a logger.(Ÿ¨µùüÿÿÿÿ8È˜Ãı1J$66129534-c361-4b89-8f1c-1ec3ca128cc1
-w
-java:S2864/"4Iterate over the "entrySet" instead of the "keySet".(Ñ‹¿‡8È˜Ãı1J$ae99c130-7bcc-40b8-969a-ea2bee74a9e8
-r	java:S1060"+Replace this use of System.out by a logger.(·¼éÒüÿÿÿÿ8É˜Ãı1J$6c720592-9541-4b3b-8b48-415e0fd4be56
-m	java:S106:"+Replace this use of System.out by a logger.(îÊÆÚ8Ê˜Ãı1J$f2539a74-1537-4ac4-a30a-bb12f2804033
-l	java:S106<"+Replace this use of System.out by a logger.(éã’n8Ê˜Ãı1J$aa5b09c5-0b0e-42b3-bb9d-6f710de284b5
-ƒ	java:S125@"<This block of commented-out lines of code should be removed.(—Šşøÿÿÿÿ8Ê˜Ãı1J$8691715c-543d-4f92-a8a4-f4bad1c617c7
-r	java:S106F"+Replace this use of System.out by a logger.(—µ£­øÿÿÿÿ8Ë˜Ãı1J$905c741a-6524-47c9-ad06-398d9bb423db
-r	java:S106H"+Replace this use of System.out by a logger.(Ó¿ÕÃıÿÿÿÿ8Ë˜Ãı1J$abe917e4-433b-4b06-a9cd-00e5e66e8db8
-r	java:S106O"+Replace this use of System.out by a logger.(—µ£­øÿÿÿÿ8Ì˜Ãı1J$634870bb-05e5-4aa1-80bd-b4ed46b6a4f3
-r	java:S106Q"+Replace this use of System.out by a logger.(Ó¿ÕÃıÿÿÿÿ8Ì˜Ãı1J$a621005a-424a-4b2b-82ab-752c96801d80
-l	java:S106T"+Replace this use of System.out by a logger.(°¤°8Í˜Ãı1J$0d1370b0-f799-4a7f-ab1a-5cdfc4510b8c
-r	java:S106Z"+Replace this use of System.out by a logger.(—µ£­øÿÿÿÿ8Í˜Ãı1J$442555c0-543f-415b-aadd-a06ac270a4a0
-l	java:S106\"+Replace this use of System.out by a logger.(°¤°8Î˜Ãı1J$f76113ca-883e-4d2a-969b-ca499a25226a

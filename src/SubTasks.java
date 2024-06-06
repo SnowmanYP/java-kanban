@@ -1,14 +1,17 @@
+/*
 import java.util.HashMap;
 
 public class SubTasks {
     public HashMap<Integer, SubTask> subTasks = new HashMap<>();
     public void addSubTask(String name, String description, Status status, Hierarchy hierarchy, Integer epicID) {
-        if (!TaskManager.epicTasks.epicTasks.containsKey(epicID)){ // Из-за этой проверки пришлось сделать
+        */
+/*if (!TaskManager.epicTasks.epicTasks.containsKey(epicID)){ // Из-за этой проверки пришлось сделать
             // static переменные в классе TaskManager
             System.out.println("Для этой подзадачи не существует сложной задачи!");
             return;
-        }
-        if (hierarchy.name() == "SUB") {
+        }*//*
+
+        if (hierarchy.name().equals("SUB")) {
             int i = ID.getID();
             subTasks.put(i, new SubTask(name, description, status, hierarchy, epicID));
             subTasks.get(i).id = i;
@@ -35,7 +38,7 @@ public class SubTasks {
                 System.out.println("ID_Key-'" + i + "' поле id" + subTasks.get(i).id + "' Название задачи-'"
                         + subTasks.get(i).taskName + "' Описание задачи-'" + subTasks.get(i).description
                         + "' Статус задачи-'" + subTasks.get(i).status + "' Иерархичность -'"
-                        + subTasks.get(i).hierarchy + "'");
+                        + subTasks.get(i).hierarchy + "'"+" epicID-'"+ subTasks.get(i).epicID +"'");
         }
     }
 
@@ -55,7 +58,8 @@ public class SubTasks {
         }
         return subTasks.get(id);
     }
-    /*public EpicTask getEpicTaskEpicID(Integer epicID) { //c.1 Получение по идентификатору принадлежности к большой задаче.
+    */
+/*public EpicTask getEpicTaskEpicID(Integer epicID) { //c.1 Получение по идентификатору принадлежности к большой задаче.
         if (subTasks == null) {
             System.out.println("Списка задач не существует!");
             return null;
@@ -74,16 +78,19 @@ public class SubTasks {
 
         return TaskManager.epicTasks.getEpicTask(epicID);
         //subTasks.get(id);
-    }*/
+    }*//*
+
 
     public void createSubTask(SubTask subTask) { // d. Создание. Сам объект должен передаваться в качестве параметра.
 
         /// Возможно вообще нет больших задач. Проверку. если список больших задач пуст или ссылка==null тогда ничего не
         // делать и вывести предупреждение++
-       if (TaskManager.epicTasks.epicTasks.isEmpty()) {
+       */
+/*if (TaskManager.epicTasks.epicTasks.isEmpty()) {
            System.out.println("Невозможно создать подзадачу. Не существует ни одной большой задачи.");
            return;
-       }
+       }*//*
+
 
         /// Нужно сделать проверку, возможно нет большой подзадачи с таким ID - обратится к карте эпик перебрать все поля
         /// пока не найдется с epicID иначе подзадачу добавить некуда, возникает вопрос - а можно сначала создать подзадачу
@@ -93,13 +100,18 @@ public class SubTasks {
             System.out.println("Получена пустая ссылка");
             return;
         }
-        /*System.out.println(subTask.epicID);
+
+        /// Нужно сделать проверку, возможно нет большой подзадачи с таким ID - обратится к карте эпик перебрать все поля
+        /// пока не найдется с epicID иначе подзадачу добавить некуда, возникает вопрос - а можно сначала создать подзадачу
+        /// а потом большую задачу?
+        */
+/*System.out.println(subTask.epicID);
         for (EpicTask eT : TaskManager.epicTasks.){
             System.out.println(eT.epicID);
-        }*/
+        }*//*
 
 
-        if (subTask.hierarchy.name() == "SUB") {
+        if (subTask.hierarchy.name().equals("SUB")) {
             int i = ID.getID();
             subTasks.put(i, subTask); // Нельзя создать запись с переданным id, id будет присваиться при создании записи
             subTasks.get(i).id = i;
@@ -108,4 +120,4 @@ public class SubTasks {
             System.out.println("У создаваемой задачи уровень " + subTask.hierarchy.name() + " требуемый уровень - SUB");
         }
     }
-}
+}*/

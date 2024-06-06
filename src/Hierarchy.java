@@ -1,5 +1,5 @@
 public enum Hierarchy {
     SUB,
     MIDDLE,
-    EPIC;
+    EPIC
 }

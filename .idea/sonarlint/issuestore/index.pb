@@ -22,12 +22,8 @@ B
 src/EpicTasks.java,3\7\377278601f2cf8846ae97cdbcd0c6f502492040c
 A
 src/EpicTask.java,b\f\bf090fd64075db68862158d0ddb389e1b1fcfedd
-<
-src/TM2.java,4\6\46699aaa2ca85e99d19258d3322429d8cda34f6b
 @
 src/SubTask.java,f\c\fcfb69472622f272eb5d8f453e69584d0e529474
-F
-src/UniversalTask.java,b\9\b9474833a3f6848b061db640ac365d2272de73aa
 A
 src/SubTasks.java,6\6\66db3c52cdf2f7211960d5567ccd59e23a304e84
 

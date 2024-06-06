@@ -1,34 +1,3 @@
 
-—
-java:S1104"UMake epicTasks a static final constant or non-public and provide accessors if needed.(‹êœl8®¨¨—þ1J$892074e2-ebb6-461b-b850-91610462f4e6
-¨
-java:S1319"fThe type of "epicTasks" should be an interface such as "Map" rather than the implementation "HashMap".(‹êœl8®¨¨—þ1J$818d39a2-c2f6-4228-a319-b6920bab1128
-„
-java:S4973"<Strings and Boxed types should be compared using "equals()".(Ñ­¼ºÿÿÿÿÿ8®¨¨—þ1J$c21ddb8c-2942-430c-a318-189004fa4f36
-„
-java:S4973;"<Strings and Boxed types should be compared using "equals()".(á£©ýÿÿÿÿ8®¨¨—þ1J$7b3f7279-2683-45c8-8725-2d0e95b48403
 ]
-java:S1220""Move this file to a named package.8®¨¨—þ1J$a6963967-5bdf-4e85-8089-658f70dbb311
-Z
-java:S1700"Rename field "epicTasks"(‹êœl8¯¨¨—þ1J$1516eb85-ec7b-45ca-8f40-62f04255abc7
-m	java:S106"+Replace this use of System.out by a logger.(ç´È€8³¨¨—þ1J$0a378b6c-1f26-4cae-ac1b-ff530446f26e
-m	java:S106"+Replace this use of System.out by a logger.(êÁß8´¨¨—þ1J$82b0e99e-9206-4578-8a36-002cb370e052
-m	java:S106"+Replace this use of System.out by a logger.(ù‰­ž8´¨¨—þ1J$4351f375-2fcd-4b8a-bdaf-7c14452f401e
-r	java:S106"+Replace this use of System.out by a logger.(¥¼Æáùÿÿÿÿ8´¨¨—þ1J$089ae2ff-749f-40f5-879e-35d6c88a80a0
-m	java:S106"+Replace this use of System.out by a logger.(‰²æó8´¨¨—þ1J$aac86178-bf78-4adf-97f5-fcc8af6e941a
-w
-java:S2864"4Iterate over the "entrySet" instead of the "keySet".(ƒº®ª8´¨¨—þ1J$1978d0a2-dbdd-4481-bef7-e7838d3dd4a3
-m	java:S106"+Replace this use of System.out by a logger.(“¬”Õ8µ¨¨—þ1J$25d6a66e-6240-436c-9bef-500e368c9be3
-m	java:S106'"+Replace this use of System.out by a logger.(×œýÒ8µ¨¨—þ1J$eacd4f99-adab-479e-a819-2d562b4cb30d
-m	java:S106,"+Replace this use of System.out by a logger.(É¹ÌÂ8¶¨¨—þ1J$5ec84500-7cbb-4989-b3e0-c399515f6bf4
-m	java:S1060"+Replace this use of System.out by a logger.(…±¡ñ8¶¨¨—þ1J$2f0aa7de-470c-449c-9317-7ab06e443cf7
-r	java:S1068"+Replace this use of System.out by a logger.(â›º¬ýÿÿÿÿ8·¨¨—þ1J$08cf4f97-6665-4e73-8485-76e52c47a1ff
-r	java:S106?"+Replace this use of System.out by a logger.(´ÚÕÑüÿÿÿÿ8·¨¨—þ1J$40ce3fe3-4957-4e18-ba62-8af84c477e6b
-m	java:S106A"+Replace this use of System.out by a logger.(äùŠœ8·¨¨—þ1J$b1cc6188-3fa5-46e6-a86f-19047485eb36
-r	java:S106I"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ8·¨¨—þ1J$5346899f-018a-4bb3-8f0f-55ad180f4428
-m	java:S106M"+Replace this use of System.out by a logger.(À­ã…8¸¨¨—þ1J$cc038623-665c-428a-aa33-c4f069b8bc99
-l	java:S106Q"+Replace this use of System.out by a logger.(°¤°8¸¨¨—þ1J$abfd0df8-7f19-4e9e-b9ba-b4a41af23180
-r	java:S106V"+Replace this use of System.out by a logger.(âø¤·ùÿÿÿÿ8¸¨¨—þ1J$ff02a816-fd54-45a1-adae-8a6bbc5ae8be
-r	java:S106["+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ8¹¨¨—þ1J$cd33218e-a12f-404d-b282-4467d6676c52
-l	java:S106_"+Replace this use of System.out by a logger.(°¤°8çÆÏ›þ1J$1572e769-3606-44d6-8ef3-f4b5bad8b125
-r	java:S106d"+Replace this use of System.out by a logger.(Ô¾Ÿýÿÿÿÿ8ˆŒÿ›þ1J$6e25fdd0-59d6-4dd1-a8a0-12fe91470c04
+java:S1220""Move this file to a named package.8¨›×Àþ1J$95ae49a7-29d5-4533-9ca4-0c8199d2120d

@@ -1,3 +1,4 @@
+/*
 import java.util.HashMap;
 
 public class Tasks {
@@ -5,7 +6,7 @@ public class Tasks {
     public HashMap<Integer, Task> middleTasks = new HashMap<>();
 
     public void addMiddleTask(String name, String description, Status status, Hierarchy hierarchy) {
-        if (hierarchy.name() == "MIDDLE") {
+        if (hierarchy.name().equals("MIDDLE")) {
             int i = ID.getID();
             middleTasks.put(i, new EpicTask(name, description, status, hierarchy));
             middleTasks.get(i).id = i;
@@ -56,7 +57,7 @@ public class Tasks {
             System.out.println("Получена пустая ссылка");
             return;
         }
-        if (task.hierarchy.name() == "MIDDLE") {
+        if (task.hierarchy.name().equals("MIDDLE")) {
             int i = ID.getID();
             middleTasks.put(i, task); // Нельзя создать запись с переданным id, id будет присваиться при создании записи
             middleTasks.get(i).id = i;
@@ -96,3 +97,4 @@ public class Tasks {
         middleTasks.remove(id);
     }
 }
+*/

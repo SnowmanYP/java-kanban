@@ -7,8 +7,8 @@ public class ID {
     }
 
     static public int getEpicID() {
-        ID++;
-        return ID;
+        epicID++;
+        return epicID;
     }
 
 
