@@ -4,15 +4,12 @@ public class Task {
     Integer id;
     String taskName;
     String description;
-    Status status; //Статус задачи
-    Hierarchy hierarchy; //Тип задачи
+    Status status;
 
-
-        public Task(String taskName, String description, Status status, Hierarchy hierarchy) {
+        public Task(String taskName, String description, Status status) {
         this.taskName = taskName;
         this.description = description;
         this.status = status;
-        this.hierarchy = hierarchy;
     }
 
     @Override  // "...При этом две задачи с одинаковым id должны выглядеть для менеджера как одна и та же."

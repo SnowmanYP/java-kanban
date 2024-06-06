@@ -62,3 +62,5 @@ Q.idea/sonarlint/securityhotspotstore/4/6/46699aaa2ca85e99d19258d3322429d8cda34f
 Q.idea/sonarlint/securityhotspotstore/a/d/adb7b350325125a865049f7883ce35ea9d313406,8\a\8a7ce386bc82d4b6e525a02a2a57ea1e46065b20
 Å
 Q.idea/sonarlint/securityhotspotstore/6/6/66db3c52cdf2f7211960d5567ccd59e23a304e84,b\7\b79a5654e915284ba74a8646d313ddf05da341e5
+?
+java-kanban.iml,d\f\df5dcbbd3f931c7c23855ccec11732ab4c8544f2

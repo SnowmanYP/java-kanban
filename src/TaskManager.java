@@ -7,20 +7,20 @@ public class TaskManager {
 
     public static void main(String[] args) {
 // Добавляем три простых задачи для теста уровня SUB
-       /* tasks.addMiddleTask("Первая простая задача", "Абракадабра", Status.NEW, Hierarchy.MIDDLE);
-        tasks.addMiddleTask("Вторая простая задача", "Описание", Status.IN_PROGRESS, Hierarchy.MIDDLE);
-        tasks.addMiddleTask("Третья простая задача", "Описание", Status.DONE, Hierarchy.MIDDLE);
-       */
+        /*addMiddleTask("Первая простая задача", "Абракадабра", Status.NEW);
+        addMiddleTask("Вторая простая задача", "Описание", Status.IN_PROGRESS);
+        addMiddleTask("Третья простая задача", "Описание", Status.DONE);*/
+
 // Тестируем переопределенный equals() и hashCode()
-/*System.out.println(tasks.middleTasks.get(1).id+" "+tasks.middleTasks.get(1).hashCode());
-tasks.middleTasks.get(2).id=7;
-System.out.println(tasks.middleTasks.get(2).id+" "+tasks.middleTasks.get(2).hashCode());
-System.out.println(tasks.middleTasks.get(1).equals(tasks.middleTasks.get(2)));*/
+/*System.out.println(middleTasks.get(1).id+" "+middleTasks.get(1).hashCode());
+middleTasks.get(2).id=7;
+System.out.println(middleTasks.get(2).id+" "+middleTasks.get(2).hashCode());
+System.out.println(middleTasks.get(1).equals(middleTasks.get(2)));*/
 
 //Добавляем задачи уровня EPIC
-        addEpicTask("Первая эпическая", "Не битва и не война, просто задача", Status.IN_PROGRESS, Hierarchy.EPIC);
-        addEpicTask("Вторая эпическая", "Не просто задача", Status.IN_PROGRESS, Hierarchy.EPIC);
-        addEpicTask("Третья эпическая", "Сложная задача", Status.IN_PROGRESS, Hierarchy.EPIC);
+/*addEpicTask("Первая эпическая", "Не битва и не война, просто задача", Status.IN_PROGRESS);
+addEpicTask("Вторая эпическая", "Не просто задача", Status.IN_PROGRESS);
+addEpicTask("Третья эпическая", "Сложная задача", Status.IN_PROGRESS);*/
 
 // printOneEpicTask(epicTasks.get(4)); //Тестируем метод - работает ++
 // printAllEpicTasks(); //Тестируем метод - работает ++
@@ -40,10 +40,10 @@ System.out.println(newEpicTask.id +" " + newEpicTask.epicID); updateEpicTask(new
 printAllEpicTasks();*/
 
 //Добавляем подзадачи уровня SUB
-        addSubTask("Первая подзадача", "Первая подзадача первой эпической", Status.DONE, Hierarchy.SUB, 1);
-        addSubTask("Вторая подзадача", "Вторая подзадача первой эпической", Status.DONE, Hierarchy.SUB, 1);
-        addSubTask("Третья подзадача", "1-я подзадача 2-ой эпической", Status.IN_PROGRESS, Hierarchy.SUB, 2);
-        addSubTask("Четвертая подзадача", "Третья подзадача первой эпической", Status.DONE, Hierarchy.SUB, 1);
+addSubTask("Первая подзадача", "Первая подзадача первой эпической", Status.DONE, 1);
+addSubTask("Вторая подзадача", "Вторая подзадача первой эпической", Status.DONE, 1);
+addSubTask("Третья подзадача", "1-я подзадача 2-ой эпической", Status.IN_PROGRESS, 2);
+addSubTask("Четвертая подзадача", "Третья подзадача первой эпической", Status.DONE, 1);
 
 //Тестируем метод dellEpicTask - работает++
         /*printAllEpicTasks();
@@ -91,13 +91,13 @@ printAllEpicTasks();*/
         System.out.print("\n");
         printAllSubTasks();*/
 
-        addMiddleTask("Первая задача", "Описание", Status.DONE, Hierarchy.MIDDLE);
-        addMiddleTask("Вторая задача", "Описание", Status.IN_PROGRESS  , Hierarchy.MIDDLE);
-        addMiddleTask("Третья задача", "Описание", Status.NEW, Hierarchy.MIDDLE);
-        addMiddleTask("Четвертая задача", "Описание", Status.NEW, Hierarchy.MIDDLE);
-        Task task=new Task("Обновленная задача", "Обновление", Status.NEW, Hierarchy.MIDDLE);
+        addMiddleTask("Первая задача", "Описание", Status.DONE);
+        addMiddleTask("Вторая задача", "Описание", Status.IN_PROGRESS);
+        addMiddleTask("Третья задача", "Описание", Status.NEW);
+        addMiddleTask("Четвертая задача", "Описание", Status.NEW);
+        Task task=new Task("Обновленная задача", "Обновление", Status.NEW);
         updateMiddleTask(task, 10);
-        Task task2=new Task("Созданная задача", "Создание", Status.NEW, Hierarchy.MIDDLE);
+        Task task2=new Task("Созданная задача", "Создание", Status.NEW);
         createMiddleTask(task2);
         printAllMiddleTask();
 
@@ -107,16 +107,12 @@ printAllEpicTasks();*/
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --EPIC--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    public static void addEpicTask(String name, String description, Status status, Hierarchy hierarchy) {
-        if (hierarchy.name().equals("EPIC")) {
-            int i = ID.getID();
-            epicTasks.put(i, new EpicTask(name, description, status, hierarchy));
+    public static void addEpicTask(String name, String description, Status status) {
+           int i = ID.getID();
+            epicTasks.put(i, new EpicTask(name, description, status));
             epicTasks.get(i).id = i;
             epicTasks.get(i).epicID = ID.getEpicID();
             System.out.println("Большая задача добавлена.");
-        } else {
-            System.out.println("У создаваемой задачи уровень " + hierarchy.name() + " требуемый уровень - EPIC");
-        }
     }
 
     public static void printOneEpicTask(EpicTask epicTask) { //Вывод в консоль одной задачи
@@ -125,7 +121,7 @@ printAllEpicTasks();*/
             return;
         }
         System.out.println("поле id-'" + epicTask.id + "' Название задачи-'" + epicTask.taskName + "' Описание задачи-'"
-                + epicTask.description + "' Статус задачи-'" + epicTask.status + "' Иерархичность -'" + epicTask.hierarchy + "' epicID-'" + epicTask.epicID + "'");
+                + epicTask.description + "' Статус задачи-'" + epicTask.status +  "' epicID-'" + epicTask.epicID + "'");
     }
 
     public static void printAllEpicTasks() {  //a. Получение списка всех задач. - вывод в консоль.
@@ -134,8 +130,7 @@ printAllEpicTasks();*/
             for (Integer i : epicTasks.keySet())
                 System.out.println("ID_Key-'" + i + "' поле id-'" + epicTasks.get(i).id + "' Название задачи-'"
                         + epicTasks.get(i).taskName + "' Описание задачи-'" + epicTasks.get(i).description
-                        + "' Статус задачи-'" + epicTasks.get(i).status + "' Иерархичность -'"
-                        + epicTasks.get(i).hierarchy + "' epicID-'" + epicTasks.get(i).epicID + "'");
+                        + "' Статус задачи-'" + epicTasks.get(i).status + "' epicID-'" + epicTasks.get(i).epicID + "'");
         }
     }
 
@@ -165,8 +160,7 @@ printAllEpicTasks();*/
             System.out.println("Получена пустая ссылка");
             return;
         }
-        if (epicTask.hierarchy.name().equals("EPIC")) {
-            if (!epicTask.status.equals(Status.NEW)) {  //??
+            if (!epicTask.status.equals(Status.NEW)) {
                 System.out.println("У создаваемой задачи должен быть статус NEW");
                 epicTask.status = Status.NEW;
             }
@@ -175,10 +169,6 @@ printAllEpicTasks();*/
             epicTasks.get(i).id = i;    // поэтому id будет присвоен при создании записи
             epicTasks.get(i).epicID = ID.getEpicID();
             System.out.println("Большая задача создана.");
-        } else {
-            System.out.println("У создаваемой задачи уровень " + epicTask.hierarchy.name()
-                    + " требуемый уровень - EPIC");
-        }
     }
 
 
@@ -253,9 +243,9 @@ printAllEpicTasks();*/
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --SUB--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static void addSubTask(String name, String description, Status status, Hierarchy hierarchy, Integer epicID) {
+    public static void addSubTask(String name, String description, Status status, Integer epicID) {
             int i = ID.getID();
-            subTasks.put(i, new SubTask(name, description, status, hierarchy, epicID));
+            subTasks.put(i, new SubTask(name, description, status, epicID));
             subTasks.get(i).id = i;
             subTasks.get(i).epicID = epicID;
             System.out.println("Подзадача добавлена");
@@ -267,7 +257,7 @@ printAllEpicTasks();*/
             return;
         }
         System.out.println("поле id-'" + subTask.id + "' Название задачи-'" + subTask.taskName + "' Описание задачи-'"
-                + subTask.description + "' Статус задачи-'" + subTask.status + "' Иерархичность -'" + subTask.hierarchy + "' epicID-'" + subTask.epicID + "'");
+                + subTask.description + "' Статус задачи-'" + subTask.status + "' epicID-'" + subTask.epicID + "'");
     }
 
     public static void printAllSubTasks() {  //a. Получение списка всех подзадач. - вывод в консоль.
@@ -276,8 +266,7 @@ printAllEpicTasks();*/
             for (Integer i : subTasks.keySet())
                 System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).id + "' Название задачи-'"
                         + subTasks.get(i).taskName + "' Описание задачи-'" + subTasks.get(i).description
-                        + "' Статус задачи-'" + subTasks.get(i).status + "' Иерархичность -'"
-                        + subTasks.get(i).hierarchy + "'" + " epicID-'" + subTasks.get(i).epicID + "'");
+                        + "' Статус задачи-'" + subTasks.get(i).status + "'" + " epicID-'" + subTasks.get(i).epicID + "'");
         }
     }
 
@@ -405,9 +394,9 @@ printAllEpicTasks();*/
         System.out.println("Подзадача удалена");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --MIDDLE (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public static void addMiddleTask(String name, String description, Status status, Hierarchy hierarchy) {
+public static void addMiddleTask(String name, String description, Status status) {
         int i = ID.getID();
-        middleTasks.put(i, new Task(name, description, status, hierarchy));
+        middleTasks.put(i, new Task(name, description, status));
         middleTasks.get(i).id = i;
         System.out.println("Добавлена простая задача.");
     }
@@ -418,7 +407,7 @@ public static void addMiddleTask(String name, String description, Status status,
             return;
         }
         System.out.println("Название задачи-'" + task.taskName + "' поле_id-'" + task.id + "' Описание задачи-'"
-                + task.description + "' Статус задачи-'" + task.status + "' Иерархичность -'" + task.hierarchy + "'");
+                + task.description + "' Статус задачи-'" + task.status + "'");
     }
 
     public static void printAllMiddleTask() {  //a. Получение списка всех задач. - вывод в консоль.
@@ -427,8 +416,7 @@ public static void addMiddleTask(String name, String description, Status status,
             for (Integer i : middleTasks.keySet())
                 System.out.println("ID_Key-'" + i + "' поле_id-'" + middleTasks.get(i).id + "' Название задачи-'"
                         + middleTasks.get(i).taskName + "' Описание задачи-'" + middleTasks.get(i).description
-                        + "' Статус задачи-'" + middleTasks.get(i).status + "' Иерархичность -'"
-                        + middleTasks.get(i).hierarchy + "'");
+                        + "' Статус задачи-'" + middleTasks.get(i).status + "'");
         }
     }
 
