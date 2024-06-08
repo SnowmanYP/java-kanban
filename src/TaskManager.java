@@ -1,130 +1,29 @@
 import java.util.HashMap;
 
 public class TaskManager {
-    public static HashMap<Integer, EpicTask> epicTasks = new HashMap<>();
-    public static HashMap<Integer, SubTask> subTasks = new HashMap<>();
-    public static HashMap<Integer, Task> middleTasks = new HashMap<>();
-
-    public static void main(String[] args) {
-// Добавляем три простых задачи для теста уровня SUB
-        /*addMiddleTask("Первая простая задача", "Абракадабра", Status.NEW);
-        addMiddleTask("Вторая простая задача", "Описание", Status.IN_PROGRESS);
-        addMiddleTask("Третья простая задача", "Описание", Status.DONE);*/
-
-// Тестируем переопределенный equals() и hashCode()
-/*System.out.println(middleTasks.get(1).id+" "+middleTasks.get(1).hashCode());
-middleTasks.get(2).id=7;
-System.out.println(middleTasks.get(2).id+" "+middleTasks.get(2).hashCode());
-System.out.println(middleTasks.get(1).equals(middleTasks.get(2)));*/
-
-//Добавляем задачи уровня EPIC
-/*addEpicTask("Первая эпическая", "Не битва и не война, просто задача", Status.IN_PROGRESS);
-addEpicTask("Вторая эпическая", "Не просто задача", Status.IN_PROGRESS);
-addEpicTask("Третья эпическая", "Сложная задача", Status.IN_PROGRESS);*/
-
-// printOneEpicTask(epicTasks.get(4)); //Тестируем метод - работает ++
-// printAllEpicTasks(); //Тестируем метод - работает ++
-// dellAllEpicTasks(); printAllEpicTasks(); //Тестируем метод - работает ++
-// printOneEpicTask(getEpicTask(5)); //Тестируем метод getEpicTask - работает ++
-
-        //Тестируем метод createEpicTask() - работает ++
-/*printAllEpicTasks(); System.out.println();
-EpicTask newEpicTask=new EpicTask("Тестируем createEpicTask()","Новая задача уровня EPIC",
-Status.NEW,Hierarchy.EPIC);
-createEpicTask(newEpicTask); printAllEpicTasks(); System.out.println();*/
-//Тестируем метод updateEpicTask() - работает ??
-/* printAllEpicTasks();
-EpicTask newEpicTask=new EpicTask("Тестируем updateEpicTask()","Обновленная задача уровня EPIC",
-       Status.NEW,Hierarchy.EPIC);
-System.out.println(newEpicTask.id +" " + newEpicTask.epicID); updateEpicTask(newEpicTask, 5);
-printAllEpicTasks();*/
-
-//Добавляем подзадачи уровня SUB
-addSubTask("Первая подзадача", "Первая подзадача первой эпической", Status.DONE, 1);
-addSubTask("Вторая подзадача", "Вторая подзадача первой эпической", Status.DONE, 1);
-addSubTask("Третья подзадача", "1-я подзадача 2-ой эпической", Status.IN_PROGRESS, 2);
-addSubTask("Четвертая подзадача", "Третья подзадача первой эпической", Status.DONE, 1);
-
-//Тестируем метод dellEpicTask - работает++
-        /*printAllEpicTasks();
-        printAllSubTasks();
-        dellEpicTask(4);
-        printAllEpicTasks();
-        printAllSubTasks();*/
-//Тестируем метод printAllTasksOfOneEpic ++
-        //printAllTasksOfOneEpic(4);
-//Тестируем метод dellAllEpicTask - работает++
-        /*printAllEpicTasks();
-        printAllSubTasks();
-        dellAllEpicTasks();
-        printAllEpicTasks();
-        printAllSubTasks();*/
-//Снова тестируем updateEpicTask обновление статусов подзадач
-    /*printAllEpicTasks();
-    System.out.println();
-    printAllSubTasks();
-
-    EpicTask newEpicTask=new EpicTask("Тестируем createEpicTask()","Новая задача уровня EPIC",
-    Status.DONE,Hierarchy.EPIC);
-    updateEpicTask(newEpicTask,1);
-
-    printAllEpicTasks();
-    System.out.println();
-    printAllSubTasks();*/
-        //Тестируем метод createSubTask - работает++
-        /*printAllSubTasks();
-        printAllEpicTasks();
-        System.out.println();
-        SubTask sT = new SubTask("Подзадача", "Создана подзадача к эпической", Status.IN_PROGRESS, Hierarchy.SUB, 1);
-        createSubTask(sT);
-        printAllSubTasks();
-        printAllEpicTasks();*/
-        //Тестируем метод updateSubTask();
-
-        /*printAllEpicTasks();
-        System.out.print("\n");
-        printAllSubTasks();
-        System.out.print("\n\n");
-        SubTask sT = new SubTask("Подзадача", "Обновлена подзадача", Status.DONE, Hierarchy.SUB, 1);
-        updateSubTask(sT, 7);
-        printAllEpicTasks();
-        System.out.print("\n");
-        printAllSubTasks();*/
-
-        addMiddleTask("Первая задача", "Описание", Status.DONE);
-        addMiddleTask("Вторая задача", "Описание", Status.IN_PROGRESS);
-        addMiddleTask("Третья задача", "Описание", Status.NEW);
-        addMiddleTask("Четвертая задача", "Описание", Status.NEW);
-        Task task=new Task("Обновленная задача", "Обновление", Status.NEW);
-        updateMiddleTask(task, 10);
-        Task task2=new Task("Созданная задача", "Создание", Status.NEW);
-        createMiddleTask(task2);
-        printAllMiddleTask();
-
-
-
-
-    }
+    public HashMap<Integer, EpicTask> epicTasks = new HashMap<>();
+    public HashMap<Integer, SubTask> subTasks = new HashMap<>();
+    public HashMap<Integer, Task> middleTasks = new HashMap<>();
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --EPIC--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    public static void addEpicTask(String name, String description, Status status) {
-           int i = ID.getID();
-            epicTasks.put(i, new EpicTask(name, description, status));
-            epicTasks.get(i).id = i;
-            epicTasks.get(i).epicID = ID.getEpicID();
-            System.out.println("Большая задача добавлена.");
+    public void addEpicTask(String name, String description, Status status) {
+        int i = ID.getID();
+        epicTasks.put(i, new EpicTask(name, description, status));
+        epicTasks.get(i).id = i;
+        epicTasks.get(i).epicID = ID.getEpicID();
+        System.out.println("Большая задача добавлена.");
     }
 
-    public static void printOneEpicTask(EpicTask epicTask) { //Вывод в консоль одной задачи
+    public void printOneEpicTask(EpicTask epicTask) { //Вывод в консоль одной задачи
         if (epicTask == null) {
             System.out.println("Нет такой задачи");
             return;
         }
         System.out.println("поле id-'" + epicTask.id + "' Название задачи-'" + epicTask.taskName + "' Описание задачи-'"
-                + epicTask.description + "' Статус задачи-'" + epicTask.status +  "' epicID-'" + epicTask.epicID + "'");
+                + epicTask.description + "' Статус задачи-'" + epicTask.status + "' epicID-'" + epicTask.epicID + "'");
     }
 
-    public static void printAllEpicTasks() {  //a. Получение списка всех задач. - вывод в консоль.
+    public void printAllEpicTasks() {  //a. Получение списка всех задач. - вывод в консоль.
         if (epicTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : epicTasks.keySet())
@@ -134,7 +33,7 @@ addSubTask("Четвертая подзадача", "Третья подзада
         }
     }
 
-    public static void dellAllEpicTasks() { // b. Удаление всех задач.
+    public void dellAllEpicTasks() { // b. Удаление всех задач.
         epicTasks.clear();
         dellAllSubTasks();
         //Если мы удалили все EPIC-задачи значит нужно удалить и все SUB задачи, но не наоборот
@@ -142,7 +41,7 @@ addSubTask("Четвертая подзадача", "Третья подзада
         System.out.println("Список больших задач полностью удален!");
     }
 
-    public static EpicTask getEpicTask(Integer id) { //c. Получение по идентификатору.
+    public EpicTask getEpicTask(Integer id) { //c. Получение по идентификатору.
         if (epicTasks == null) {
             System.out.println("Списка задач не существует!");
             return null;
@@ -154,25 +53,25 @@ addSubTask("Четвертая подзадача", "Третья подзада
         return epicTasks.get(id);
     }
 
-    public static void createEpicTask(EpicTask epicTask) { // d. Создание. Сам объект должен передаваться
+    public void createEpicTask(EpicTask epicTask) { // d. Создание. Сам объект должен передаваться
         // в качестве параметра.
         if (epicTask == null) {
             System.out.println("Получена пустая ссылка");
             return;
         }
-            if (!epicTask.status.equals(Status.NEW)) {
-                System.out.println("У создаваемой задачи должен быть статус NEW");
-                epicTask.status = Status.NEW;
-            }
-            int i = ID.getID();
-            epicTasks.put(i, epicTask); // Нельзя создать запись с переданным id, id уникален,
-            epicTasks.get(i).id = i;    // поэтому id будет присвоен при создании записи
-            epicTasks.get(i).epicID = ID.getEpicID();
-            System.out.println("Большая задача создана.");
+        if (!epicTask.status.equals(Status.NEW)) {
+            System.out.println("У создаваемой задачи должен быть статус NEW");
+            epicTask.status = Status.NEW;
+        }
+        int i = ID.getID();
+        epicTasks.put(i, epicTask); // Нельзя создать запись с переданным id, id уникален,
+        epicTasks.get(i).id = i;    // поэтому id будет присвоен при создании записи
+        epicTasks.get(i).epicID = ID.getEpicID();
+        System.out.println("Большая задача создана.");
     }
 
 
-    public static void updateEpicTask(EpicTask epicTask, Integer id) {
+    public void updateEpicTask(EpicTask epicTask, Integer id) {
         // e. Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.
         if (epicTasks == null || epicTasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
@@ -207,10 +106,14 @@ addSubTask("Четвертая подзадача", "Третья подзада
                 System.out.println();
             }
         }
+        //А если у обновленной большой задачи статус изменен на IN_PROGRESS, может возникнуть коллизия
+        //эпик IN_PROGRESS все подзадачи NEW или DONE - как обрабатывать эту противоречивую логику - непонятно,
+        // так как изменение статусов сабтасков при изменении статуса эпика в ТЗ не указано.
+        // Возможно, следует запретить менять статус эпиков при вызове этого метода.
     }
 
 
-    public static void dellEpicTask(Integer id) {  // f. Удаление по идентификатору.
+    public void dellEpicTask(Integer id) {  // f. Удаление по идентификатору.
         if (epicTasks == null || epicTasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
             return;
@@ -231,7 +134,7 @@ addSubTask("Четвертая подзадача", "Третья подзада
         System.out.println("Большая задача удалена");
     }
 
-    public static void printAllTasksOfOneEpic(Integer id) { //Дополнительные методы: a. Получение списка всех подзадач
+    public void printAllTasksOfOneEpic(Integer id) { //Дополнительные методы: a. Получение списка всех подзадач
         // определённого эпика.
         printOneEpicTask(epicTasks.get(id));
         System.out.println("Подзадачи:");
@@ -243,15 +146,15 @@ addSubTask("Четвертая подзадача", "Третья подзада
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --SUB--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    public static void addSubTask(String name, String description, Status status, Integer epicID) {
-            int i = ID.getID();
-            subTasks.put(i, new SubTask(name, description, status, epicID));
-            subTasks.get(i).id = i;
-            subTasks.get(i).epicID = epicID;
-            System.out.println("Подзадача добавлена");
+    public void addSubTask(String name, String description, Status status, Integer epicID) {
+        int i = ID.getID();
+        subTasks.put(i, new SubTask(name, description, status, epicID));
+        subTasks.get(i).id = i;
+        subTasks.get(i).epicID = epicID;
+        System.out.println("Подзадача добавлена");
     }
 
-    public static void printOneSubTask(SubTask subTask) { //Вывод в консоль одной подзадачи
+    public void printOneSubTask(SubTask subTask) { //Вывод в консоль одной подзадачи
         if (subTask == null) {
             System.out.println("Нет такой задачи");
             return;
@@ -260,22 +163,23 @@ addSubTask("Четвертая подзадача", "Третья подзада
                 + subTask.description + "' Статус задачи-'" + subTask.status + "' epicID-'" + subTask.epicID + "'");
     }
 
-    public static void printAllSubTasks() {  //a. Получение списка всех подзадач. - вывод в консоль.
+    public void printAllSubTasks() {  //a. Получение списка всех подзадач. - вывод в консоль.
         if (subTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : subTasks.keySet())
                 System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).id + "' Название задачи-'"
                         + subTasks.get(i).taskName + "' Описание задачи-'" + subTasks.get(i).description
-                        + "' Статус задачи-'" + subTasks.get(i).status + "'" + " epicID-'" + subTasks.get(i).epicID + "'");
+                        + "' Статус задачи-'" + subTasks.get(i).status + "'" + " epicID-'" + subTasks.get(i).epicID
+                        + "'");
         }
     }
 
-    public static void dellAllSubTasks() { // b. Удаление всех подзадач.
+    public void dellAllSubTasks() { // b. Удаление всех подзадач.
         subTasks.clear();
         System.out.println("Список подзадач полностью удален!");
     }
 
-    public static SubTask getSubTask(Integer id) { //c. Получение подзадачи по уникальному идентификатору
+    public SubTask getSubTask(Integer id) { //c. Получение подзадачи по уникальному идентификатору
         if (subTasks == null) {
             System.out.println("Списка задач не существует!");
             return null;
@@ -287,7 +191,7 @@ addSubTask("Четвертая подзадача", "Третья подзада
         return subTasks.get(id);
     }
 
-    public static void createSubTask(SubTask subTask) { // d. Создание. Сам объект должен передаваться в качестве параметра.
+    public void createSubTask(SubTask subTask) { // d. Создание. Сам объект должен передаваться в качестве параметра.
         boolean isEpic = false;
         if (subTask == null) {
             System.out.println("Получена пустая ссылка");
@@ -298,28 +202,34 @@ addSubTask("Четвертая подзадача", "Третья подзада
             return;
         }
         for (EpicTask obj : epicTasks.values()) {
-            if (obj.epicID.equals(subTask.epicID)) {
-                if (obj.status.equals(Status.DONE)) {
+            isEpic = false;
+            if (obj.epicID.equals(subTask.epicID)) { //Если epicId совпадают у подзадачи и эпической задачи
+                if (obj.status.equals(Status.DONE)) { //И Статус эпика DONE
                     System.out.println("Эта большая задача завершена");
                     return;
                 }
-                subTask.id = obj.id;
+                int i = ID.getID();
+                subTask.id = i;
                 if (!subTask.status.equals(Status.NEW)) {
-                    System.out.println("У создаваемой задачи должен быть статус NEW");
+                    System.out.println("У создаваемой подзадачи должен быть статус NEW");
                     subTask.status = Status.NEW;
-                    subTasks.put(ID.getID(), subTask);
-                    System.out.println("Подзадача создана.");
-                } else isEpic = true;
-            }
+                }
+                subTasks.put(i, subTask);
+                System.out.println("Подзадача создана.");
+
+            } else isEpic = true;
         }
-        if (!isEpic) {
+        if (isEpic) {
             System.out.println("Для этой подзадачи нет большой задачи");
         }
-
     }
 
-    public static void updateSubTask(SubTask subTask, Integer id) {
+
+    public void updateSubTask(SubTask subTask, Integer id) {
         // e. Обновление. Новая версия объекта с верным идентификатором передаётся в виде параметра.
+        int epicTaskID = -1;
+        boolean isNew = true;
+        boolean isDone = true;
         if (subTasks == null || subTasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
             return;
@@ -332,56 +242,28 @@ addSubTask("Четвертая подзадача", "Третья подзада
             System.out.println("Нет задачи с таким идентификатором");
             return;
         }
-        if (subTask.status.equals(Status.NEW)) { //Если все подзадачи эпика будут NEW и переданная подзадача так же NEW
-            // Статус эпика меняется на NEW
-            boolean isNew = true; //Предполагем, что все подзадачи будут NEW
-            for (SubTask obj : subTasks.values()) {
-                if (obj.epicID.equals(subTask.epicID)) { //Если подзадача входит в наш эпик
-                    if (obj.status != Status.NEW) { //Предположили - пытаемся опровергнуть
-                        isNew = false;
-                        System.out.println(isNew);
-                        System.out.println(obj.status);
-                        System.out.println(obj.epicID);
-                    }
-                }
-            }
-            if (isNew) {
-                for (EpicTask obj : epicTasks.values()) { //Меняем статус эпик на NEW
-                    if (obj.epicID.equals(subTask.epicID)) {
-                        obj.status = Status.valueOf("NEW");
-                    }
-                }
-            }
-        }
-        if (subTask.status.equals(Status.DONE)) { //Если все подзадачи эпика будут DONE и переданная подзадача так же DONE
-            // Статус эпика меняется на DONE
-            boolean isNew = true; //Предполагем, что все подзадачи будут DONE
-            for (SubTask obj : subTasks.values()) {
-                if (obj.epicID.equals(subTask.epicID)) { //Если подзадача входит в наш эпик
-                    if (obj.status != Status.DONE) { //Предположили - пытаемся опровергнуть
-                        isNew = false;
-                        System.out.println(isNew);
-                        System.out.println(obj.status);
-                        System.out.println(obj.epicID);
-                    }
-                }
-            }
-            if (isNew) {
-                for (EpicTask obj : epicTasks.values()) { //Меняем статус эпик на DONE
-                    if (obj.epicID.equals(subTask.epicID)) {
-                        obj.status = Status.valueOf("DONE");
-                    }
-                }
-            }
-        }
         subTask.id = id;
         subTask.epicID = subTasks.get(id).epicID;
         subTasks.replace(id, subTask);
+        for (EpicTask obj : epicTasks.values()) {
+            if (obj.epicID.equals(subTask.epicID)) {
+                epicTaskID = obj.id;  //id Заголовка
+            }
+        }
+        for (SubTask obj : subTasks.values()) {
+            if (obj.epicID.equals(subTask.epicID)) {
+                if (obj.status != Status.NEW) isNew = false;
+                if (obj.status != Status.DONE) isDone = false;
+            }
+            if (isNew) epicTasks.get(epicTaskID).status = Status.NEW;
+            else if (isDone) epicTasks.get(epicTaskID).status = Status.DONE;
+            else epicTasks.get(epicTaskID).status = Status.IN_PROGRESS;
+        }
         System.out.println("Подзадача обновлена");
     }
 
 
-    public static void dellSubTask(Integer id) {  // f. Удаление по идентификатору.
+    public void dellSubTask(Integer id) {  // f. Удаление по идентификатору.
         if (subTasks == null || subTasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
             return;
@@ -391,17 +273,19 @@ addSubTask("Четвертая подзадача", "Третья подзада
             return;
         }
         subTasks.remove(id);
+        recalcOfStatus();
         System.out.println("Подзадача удалена");
     }
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --MIDDLE (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-public static void addMiddleTask(String name, String description, Status status) {
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --MIDDLE (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public void addMiddleTask(String name, String description, Status status) {
         int i = ID.getID();
         middleTasks.put(i, new Task(name, description, status));
         middleTasks.get(i).id = i;
         System.out.println("Добавлена простая задача.");
     }
 
-    public static void printOneTask(Task task) { //Вывод в консоль одной задачи
+    public void printOneTask(Task task) { //Вывод в консоль одной задачи
         if (task == null) {
             System.out.println("Нет такой задачи");
             return;
@@ -410,7 +294,7 @@ public static void addMiddleTask(String name, String description, Status status)
                 + task.description + "' Статус задачи-'" + task.status + "'");
     }
 
-    public static void printAllMiddleTask() {  //a. Получение списка всех задач. - вывод в консоль.
+    public void printAllMiddleTask() {  //a. Получение списка всех задач. - вывод в консоль.
         if (middleTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : middleTasks.keySet())
@@ -420,11 +304,12 @@ public static void addMiddleTask(String name, String description, Status status)
         }
     }
 
-    public static void dellAllMiddleTask() { // b. Удаление всех задач.
-        middleTasks.clear(); System.out.println("Список подзадач полностью удален!");
+    public void dellAllMiddleTask() { // b. Удаление всех задач.
+        middleTasks.clear();
+        System.out.println("Список подзадач полностью удален!");
     }
 
-    public static Task getMiddleTask(Integer id) { //c. Получение по идентификатору.
+    public Task getMiddleTask(Integer id) { //c. Получение по идентификатору.
         if (middleTasks == null) {
             System.out.println("Списка задач не существует!");
             return null;
@@ -436,18 +321,18 @@ public static void addMiddleTask(String name, String description, Status status)
         return middleTasks.get(id);
     }
 
-    public static void createMiddleTask(Task task) { // d. Создание. Сам объект должен передаваться в качестве параметра.
+    public void createMiddleTask(Task task) { // d. Создание. Сам объект должен передаваться в качестве параметра.
         if (task == null) {
             System.out.println("Получена пустая ссылка");
             return;
         }
-            int i = ID.getID();
-            middleTasks.put(i, task);
-            middleTasks.get(i).id = i;
-            System.out.println("Задача успешно создана.");
+        int i = ID.getID();
+        middleTasks.put(i, task);
+        middleTasks.get(i).id = i;
+        System.out.println("Задача успешно создана.");
     }
 
-    public static void updateMiddleTask(Task task, Integer id) {
+    public void updateMiddleTask(Task task, Integer id) {
         // e. Обновление.
         if (middleTasks == null || middleTasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
@@ -461,12 +346,12 @@ public static void addMiddleTask(String name, String description, Status status)
             System.out.println("Нет задачи с таким идентификатором");
             return;
         }
-        task.id=id;
+        task.id = id;
         middleTasks.replace(id, task);
         System.out.println("Задача обновлена");
     }
 
-    public static void delMiddleTask(Integer id) {  // f. Удаление по идентификатору.
+    public void dellMiddleTask(Integer id) {  // f. Удаление по идентификатору.
         if (middleTasks == null || middleTasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
             return;
@@ -475,5 +360,26 @@ public static void addMiddleTask(String name, String description, Status status)
             System.out.println("Нет задачи с таким идентификатором");
         }
         middleTasks.remove(id);
+        System.out.println("Задача удалена");
+    }
+
+    //Приводит в соответствие статусы Epiс и Sub
+    public void recalcOfStatus() {
+        for (EpicTask o : epicTasks.values()) {
+            boolean isNew = true;
+            boolean isDone = true;
+            int count = 0;
+            int id = o.id;
+            for (SubTask obj : subTasks.values()) {
+                if (o.epicID.equals(obj.epicID)) {
+                    count++;
+                    if (obj.status != Status.NEW) isNew = false;
+                    if (obj.status != Status.DONE) isDone = false;
+                }
+            }
+            if (isNew || count == 0) epicTasks.get(id).status = Status.NEW;
+            else if (isDone) epicTasks.get(id).status = Status.DONE;
+            else epicTasks.get(id).status = Status.IN_PROGRESS;
+        }
     }
 }
