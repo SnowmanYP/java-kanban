@@ -104,3 +104,5 @@ w
 G.idea/sonarlint/issuestore/8/6/862ece2c9e205fac87d6c957efbec49093616cb2,a\7\a795ef5ea9798dc6a74a5c6bb47695bebb076087
 w
 G.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,a\e\ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1
+=
+src/Epic.java,2\b\2b84a0a14af27d1f1130a627b5e77dcfe54fa918

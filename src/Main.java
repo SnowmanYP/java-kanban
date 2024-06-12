@@ -1,32 +1,32 @@
-
+//После изменения кода, тесты могут работать не корректно.
 public class Main {
     public static void main(String[] args) {
         TaskManager manager = new TaskManager();
         //Создайте две задачи, ...
-        Task task1 = new Task("Первая простая задача", "Абракадабра", Status.NEW);
-        Task task2 = new Task("Вторая простая задача", "Описание", Status.NEW);
-        manager.createMiddleTask(task1);
-        manager.createMiddleTask(task2);
+        Task task1 = new Task("Первая простая задача", "Абракадабра");
+        Task task2 = new Task("Вторая простая задача", "Описание");
+        manager.createTask(task1);
+        manager.createTask(task2);
         //...а также эпик с двумя подзадачами...
-        EpicTask epic1 = new EpicTask("Первая эпическая", "Не битва и не война, просто задача",
-                Status.NEW);
+        Epic epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача",
+                manager.getEpicID());
         manager.createEpicTask(epic1);
-        SubTask sub1 = new SubTask("Первая подзадача", "Первая подзадача первой эпической", Status.NEW,
-                epic1.epicID);
-        SubTask sub2 = new SubTask("Вторая подзадача", "Вторая подзадача первой эпической", Status.NEW,
-                epic1.epicID);
+        SubTask sub1 = new SubTask("Первая подзадача", "Первая подзадача первой эпической",
+                epic1.getEpicID());
+        SubTask sub2 = new SubTask("Вторая подзадача", "Вторая подзадача первой эпической",
+                epic1.getEpicID());
         manager.createSubTask(sub1);
         manager.createSubTask(sub2);
         //...и эпик с одной подзадачей.
-        EpicTask epic2 = new EpicTask("Вторая эпическая", "Не просто задача", Status.NEW);
+        Epic epic2 = new Epic("Вторая эпическая", "Не просто задача", manager.getEpicID());
         manager.createEpicTask(epic2);
-        SubTask sub3 = new SubTask("Еще одна подзадача", "подзадача для большой задачи", Status.NEW,
-                epic2.epicID);
+        SubTask sub3 = new SubTask("Еще одна подзадача", "подзадача для большой задачи",
+                epic2.getEpicID());
         manager.createSubTask(sub3);
         //Распечатайте списки задач, эпиков и подзадач через System.out.println(..)
         System.out.println("\nРаспечатайте списки задач, эпиков и подзадач");
         System.out.println("Обычные задачи");
-        manager.printAllMiddleTask();
+        manager.printAllTasks();
         System.out.println("Эпики");
         manager.printAllEpicTasks();
         System.out.println("Подзадачи");
@@ -35,23 +35,26 @@ public class Main {
         System.out.println("\nИзмените статусы созданных объектов");
         System.out.println("Меняем статусы простых задач");
         System.out.println("Было");
-        manager.printAllMiddleTask();
-        Task newTask1 = new Task("Для первой простой", "изменяем статус задачи new->in-progress",
-                Status.IN_PROGRESS);
-        manager.updateMiddleTask(newTask1, task1.id);
-        Task newTask2 = new Task("Для второй простой", "изменяем статус задачи new->done",
-                Status.DONE);
-        manager.updateMiddleTask(newTask2, task2.id);
+        manager.printAllTasks();
+         Task newTask1 = new Task("Для первой простой", "изменяем статус задачи new->in-progress");
+        newTask1.setStatus(Status.IN_PROGRESS); newTask1.setId(task1.id);
+        manager.updateTask(newTask1);
+        Task newTask2 = new Task("Для второй простой", "изменяем статус задачи new->done");
+        newTask2.setStatus(Status.DONE); newTask2.setId(task2.id);
+        manager.updateTask(newTask2);
         System.out.println("Стало");
-        manager.printAllMiddleTask();
+        manager.printAllTasks();
         System.out.println();
         System.out.println("Меняем статусы подзадач");
         SubTask newSubTask1 = new SubTask("Первая подзадача первой эпической", "Меняем статус ",
-                Status.DONE, epic1.epicID);
+                epic1.getEpicID());
+        newSubTask1.setStatus(Status.DONE); newSubTask1.setId(sub1.id);
         SubTask newSubTask2 = new SubTask("Вторая подзадача первой эпической", "Меняем статус ",
-                Status.NEW, epic1.epicID);
+                epic1.getEpicID());
+        newSubTask2.setStatus(Status.NEW); newSubTask1.setId(sub2.id);
         SubTask newSubTask3 = new SubTask("Первая подзадача второй эпической", "Меняем статус ",
-                Status.DONE, epic2.epicID);
+                epic2.getEpicID());
+        newSubTask3.setStatus(Status.IN_PROGRESS); newSubTask3.setId(sub3.id);
         // Проверьте, что статус задачи и подзадачи сохранился, а статус эпика рассчитался по статусам подзадач.
         System.out.println("Было");
         System.out.println("Эпик с двумя подзадачами");
@@ -59,9 +62,9 @@ public class Main {
         System.out.println("Эпик с одной подзадачей");
         manager.printAllTasksOfOneEpic(epic2.id);
         System.out.println();
-        manager.updateSubTask(newSubTask1, sub1.id);
-        manager.updateSubTask(newSubTask2, sub2.id);
-        manager.updateSubTask(newSubTask3, sub3.id);
+        manager.updateSubTask(newSubTask1);
+        manager.updateSubTask(newSubTask2);
+        manager.updateSubTask(newSubTask3);
         System.out.println("Стало");
         System.out.println("Эпик с двумя подзадачами");
         manager.printAllTasksOfOneEpic(epic1.id);
@@ -70,14 +73,14 @@ public class Main {
         //И, наконец, попробуйте удалить одну из задач и один из эпиков.
         System.out.println("\nИ, наконец, попробуйте удалить одну из задач и один из эпиков.");
         System.out.println("Было");
-        manager.printAllMiddleTask(); //Было
-        manager.dellMiddleTask(task2.id); //Удаление простой задачи
+        manager.deleteAllTasks(); //Было
+        manager.deleteTask(task2.id); //Удаление простой задачи
         System.out.println("Стало");
-        manager.printAllMiddleTask(); //Стало
+        manager.deleteAllTasks(); //Стало
         System.out.println("Было");
         manager.printAllEpicTasks(); //Было
         manager.printAllSubTasks();
-        manager.dellEpicTask(epic1.id); //Если удаляем эпик, метод удаляет подзадачи
+        manager.deleteEpicTask(epic1.id); //Если удаляем эпик, метод удаляет подзадачи
         System.out.println("Стало");
         manager.printAllEpicTasks(); //Стало
         manager.printAllSubTasks();
@@ -87,7 +90,7 @@ public class Main {
         System.out.println();
         manager.printAllSubTasks();
         System.out.println();
-        manager.dellSubTask(sub3.id);
+        manager.deleteSubTask(sub3.id);
         System.out.println();
         manager.printAllEpicTasks();
         System.out.println();
