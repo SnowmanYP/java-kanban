@@ -1,5 +1,12 @@
+package tasks;
+
+import manager.InMemoryTaskManager;
+import manager.TaskManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import task.Epic;
+import task.SubTask;
+import task.Task;
 
 import static org.junit.jupiter.api.Assertions.*;
 

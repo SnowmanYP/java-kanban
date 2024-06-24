@@ -1,3 +1,7 @@
+package task;
+
+import task.Task;
+
 public class SubTask extends Task {
     protected Integer epicID;
 
@@ -16,7 +20,7 @@ public class SubTask extends Task {
         if (this == null) {
             return "Нет такой задачи";
         }
-        return "id-'" + id + "' Название задачи-'" + taskName + "' Описание задачи-'"
-                + description + "' Статус задачи-'" + status + "' epicID-'" + epicID + "'";
+        return "id-'" + this.getId() + "' Название задачи-'" +this.getTaskName() + "' Описание задачи-'"
+                + this.getDescription() + "' Статус задачи-'" + this.getStatus() + "' epicID-'" + epicID + "'";
     }
 }

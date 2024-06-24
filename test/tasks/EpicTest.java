@@ -1,4 +1,9 @@
+package tasks;
+
+import manager.InMemoryTaskManager;
+import manager.TaskManager;
 import org.junit.jupiter.api.Test;
+import task.Epic;
 
 class EpicTest {
 

@@ -1,5 +1,12 @@
+package managers;
+
+import manager.InMemoryTaskManager;
+import status.Status;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import task.Epic;
+import task.SubTask;
+import task.Task;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -12,27 +19,27 @@ class InMemoryTaskManagerTest {
     private static Task task1;
 
     @BeforeAll
-    static void before() {
-        manager = new InMemoryTaskManager();
-        epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
-        sub1 = new SubTask("Первая подзадача", "Первая подзадача первой эпической", 1);
-        task1 = new Task("Первая простая задача", "Абракадабра");
+    static void beforeEach() {
+       manager = new InMemoryTaskManager();
+       task1 = new Task("Первая простая задача", "Абракадабра");
+       epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
     }
 
 //ТЗ - проверьте, что InMemoryTaskManager действительно добавляет задачи разного типа и может найти их по id;
+
+    @Test
+    void createAndGetSubTask() { //Тестируем создание и поиск подзадачи
+        manager.createEpicTask(epic1); //Нельзя создать подзадачу без эпика, поэтому сначала создаем эпик
+        sub1 = new SubTask("Первая подзадача", "Первая подзадача первой эпической", epic1.getId());
+        //sub1 = new...нельзя вынести в общий метод, т.к. epic1.getId() - формируется в этом методе
+        manager.createSubTask(sub1);
+        assertNotNull(manager.getSubTask(sub1.getId()), "Подзадача не найдена");
+    }
     @Test
     void createAndGetEpicTask() { //Теститируем создание и поиск эпика
         manager.createEpicTask(epic1);
         manager.printAllEpicTasks();
         assertNotNull(manager.getEpicTask(epic1.getId()), "Большая задача не найдена.");
-    }
-
-    @Test
-    void createAndGetSubTask() { //Тестируем создание и поиск подзадачи
-        manager.createEpicTask(epic1); //Нельзя создать подзадачу без эпика, поэтому сначала создаем эпик
-        manager.createSubTask(sub1);
-        manager.printAllSubTasks();
-        assertNotNull(manager.getSubTask(sub1.getId()), "Подзадача не найдена");
     }
 
     @Test
@@ -56,7 +63,7 @@ class InMemoryTaskManagerTest {
         //Принимаем поля в переменные
         // id создается при добавлении(создании) задачи
         String name = task1.getTaskName();
-        String description = task1.description;
+        String description = task1.getDescription();
         Status status = task1.getStatus();
         manager.createTask(task1); // Создаем задачу
         assertEquals(name, manager.getTask(task1.getId()).getTaskName(), "Incorrect");

@@ -1,5 +1,10 @@
+package managers;
+
+import manager.InMemoryTaskManager;
+import status.Status;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import task.Task;
 
 import java.util.ArrayList;
 import java.util.Random;

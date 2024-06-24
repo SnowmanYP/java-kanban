@@ -1,10 +1,15 @@
+package task;
+
+import status.Status;
+import task.*;
+
 import java.util.Objects;
 
 public class Task {
-    protected Integer id;
-    protected String taskName;
-    protected String description;
-    protected Status status;
+    private Integer id;
+    private String taskName;
+    private String description;
+    private Status status;
 
     public Integer getId() {
         return id;

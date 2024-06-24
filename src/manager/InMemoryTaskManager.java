@@ -1,3 +1,10 @@
+package manager;
+
+import status.Status;
+import task.Epic;
+import task.SubTask;
+import task.Task;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -23,7 +30,7 @@ public class InMemoryTaskManager implements TaskManager {
     private void addEpicTask(String name, String description, Status status) {
         int i = generateId();
         epicTasks.put(i, new Epic(name, description));
-        epicTasks.get(i).id = i;
+        epicTasks.get(i).setId(i);   //id = i;
         System.out.println("Большая задача добавлена.");
     }
 
@@ -32,9 +39,9 @@ public class InMemoryTaskManager implements TaskManager {
         if (epicTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : epicTasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле id-'" + epicTasks.get(i).id + "' Название задачи-'"
-                        + epicTasks.get(i).taskName + "' Описание задачи-'" + epicTasks.get(i).description
-                        + "' Статус задачи-'" + epicTasks.get(i).status + "'");
+                System.out.println("ID_Key-'" + i + "' поле id-'" + epicTasks.get(i).getId() + "' Название задачи-'"
+                        + epicTasks.get(i).getTaskName() + "' Описание задачи-'" + epicTasks.get(i).getDescription()
+                        + "' Статус задачи-'" + epicTasks.get(i).getStatus() + "'");
         }
     }
 
@@ -68,13 +75,13 @@ public class InMemoryTaskManager implements TaskManager {
             System.out.println("Получена пустая ссылка");
             return;
         }
-        if (!epicTask.status.equals(Status.NEW)) {
+        if (!epicTask.getStatus().equals(Status.NEW)) {
             System.out.println("У создаваемой задачи должен быть статус NEW");
-            epicTask.status = Status.NEW;
+            epicTask.setStatus(Status.NEW);
         }
         int i = generateId();
         epicTasks.put(i, epicTask); // Нельзя создать запись с переданным id, id уникален,
-        epicTasks.get(i).id = i;    // поэтому id будет присвоен при создании записи
+        epicTasks.get(i).setId(i);    // поэтому id будет присвоен при создании записи
         System.out.println("Большая задача создана.");
     }
 
@@ -89,20 +96,20 @@ public class InMemoryTaskManager implements TaskManager {
             System.out.println("Такой задачи не существует");
             return;
         }
-        epicTasks.replace(epicTask.id, epicTask);
+        epicTasks.replace(epicTask.getId(), epicTask);
         System.out.println("Большая задача обновлена");
-        if (epicTask.status.equals(Status.NEW)) {//Если у обновленной большой задачи статус NEW
+        if (epicTask.getStatus().equals(Status.NEW)) {//Если у обновленной большой задачи статус NEW
             //все соответствующие подзадачи должны быть NEW
             for (SubTask obj : subTasks.values()) {
                 if (obj.getEpicID().equals(epicTask.getId())) {
-                    obj.status = Status.NEW;
+                    obj.setStatus(Status.NEW);
                 }
             }
         }
-        if (epicTask.status.equals(Status.DONE)) { //все соответствующие подзадачи должны быть DONE
+        if (epicTask.getStatus().equals(Status.DONE)) { //все соответствующие подзадачи должны быть DONE
             for (SubTask obj : subTasks.values()) {
                 if (obj.getEpicID().equals(epicTask.getId())) {
-                    obj.status = Status.DONE;
+                    obj.setStatus(Status.DONE);
                 }
                 System.out.println();
             }
@@ -128,7 +135,7 @@ public class InMemoryTaskManager implements TaskManager {
         //избежать ConcurrentModificationException
         for (SubTask obj : copy.values()) {
             if (obj.getEpicID() == epicTasks.get(id).getId()) {
-                subTasks.remove(obj.id);
+                subTasks.remove(obj.getId());
             }
         }
         epicTasks.remove(id);
@@ -151,7 +158,7 @@ public class InMemoryTaskManager implements TaskManager {
     private void addSubTask(String name, String description, Status status, Integer epicID) {
         int i = generateId();
         subTasks.put(i, new SubTask(name, description, epicID));
-        subTasks.get(i).id = i;
+        subTasks.get(i).setId(i);
         subTasks.get(i).setEpicID(epicID);
         System.out.println("Подзадача добавлена");
     }
@@ -161,9 +168,9 @@ public class InMemoryTaskManager implements TaskManager {
         if (subTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : subTasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).id + "' Название задачи-'"
-                        + subTasks.get(i).taskName + "' Описание задачи-'" + subTasks.get(i).description
-                        + "' Статус задачи-'" + subTasks.get(i).status + "'" + " epicID-'" + subTasks.get(i).getEpicID()
+                System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).getId() + "' Название задачи-'"
+                        + subTasks.get(i).getTaskName() + "' Описание задачи-'" + subTasks.get(i).getDescription()
+                        + "' Статус задачи-'" + subTasks.get(i).getStatus() + "'" + " epicID-'" + subTasks.get(i).getEpicID()
                         + "'");
         }
     }
@@ -191,10 +198,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void createSubTask(SubTask subTask) { // d. Создание. Сам объект должен передаваться в качестве параметра.
         //Проверка на соответствие типу
-        /*if (subTask.getClass()!=SubTask.class ) {
-            System.out.println("Объект не является подзадачей");
-        }*/
-        boolean isEpic = false;
+       boolean isEpic = false;
         if (subTask == null) {
             System.out.println("Получена пустая ссылка");
             return;
@@ -206,15 +210,15 @@ public class InMemoryTaskManager implements TaskManager {
         for (Epic obj : epicTasks.values()) {
             isEpic = false;
             if (obj.getId().equals(subTask.getEpicID())) { //Если ID ecpic задачи совпадает с epicID подзадачи
-                if (obj.status.equals(Status.DONE)) { //И Статус эпика DONE
+                if (obj.getStatus().equals(Status.DONE)) { //И Статус эпика DONE
                     System.out.println("Эта большая задача завершена");
                     return;
                 }
                 int i = generateId();
-                subTask.id = i;
-                if (!subTask.status.equals(Status.NEW)) { //или NEW
+                subTask.setId(i);
+                if (!subTask.getStatus().equals(Status.NEW)) { //или NEW
                     System.out.println("У создаваемой подзадачи должен быть статус NEW");
-                    subTask.status = Status.NEW;
+                    subTask.setStatus(Status.NEW);
                 }
                 subTasks.put(i, subTask);
                 System.out.println("Подзадача создана.");
@@ -240,20 +244,20 @@ public class InMemoryTaskManager implements TaskManager {
             System.out.println("Такой задачи не существует");
             return;
         }
-        subTasks.replace(subTask.id, subTask);
+        subTasks.replace(subTask.getId(), subTask);
         for (Epic obj : epicTasks.values()) {
             if (obj.getId().equals(subTask.getEpicID())) {
-                epicTaskID = obj.id;  //id Заголовка
+                epicTaskID = obj.getId();  //id Заголовка
             }
         }
         for (SubTask obj : subTasks.values()) {
             if (obj.getEpicID().equals(subTask.getEpicID())) {
-                if (obj.status != Status.NEW) isNew = false;
-                if (obj.status != Status.DONE) isDone = false;
+                if (obj.getStatus() != Status.NEW) isNew = false;
+                if (obj.getStatus() != Status.DONE) isDone = false;
             }
-            if (isNew) epicTasks.get(epicTaskID).status = Status.NEW;
-            else if (isDone) epicTasks.get(epicTaskID).status = Status.DONE;
-            else epicTasks.get(epicTaskID).status = Status.IN_PROGRESS;
+            if (isNew) epicTasks.get(epicTaskID).setStatus(Status.NEW);
+            else if (isDone) epicTasks.get(epicTaskID).setStatus(Status.DONE);
+            else epicTasks.get(epicTaskID).setStatus(Status.IN_PROGRESS);
         }
         System.out.println("Подзадача обновлена");
     }
@@ -277,7 +281,7 @@ public class InMemoryTaskManager implements TaskManager {
     private void addTask(String name, String description, Status status) {
         int i = generateId();
         Tasks.put(i, new Task(name, description));
-        Tasks.get(i).id = i;
+        Tasks.get(i).setId(i);
         System.out.println("Добавлена простая задача.");
     }
 
@@ -286,9 +290,9 @@ public class InMemoryTaskManager implements TaskManager {
         if (Tasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : Tasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле_id-'" + Tasks.get(i).id + "' Название задачи-'"
-                        + Tasks.get(i).taskName + "' Описание задачи-'" + Tasks.get(i).description
-                        + "' Статус задачи-'" + Tasks.get(i).status + "'");
+                System.out.println("ID_Key-'" + i + "' поле_id-'" + Tasks.get(i).getId() + "' Название задачи-'"
+                        + Tasks.get(i).getTaskName() + "' Описание задачи-'" + Tasks.get(i).getDescription()
+                        + "' Статус задачи-'" + Tasks.get(i).getStatus() + "'");
         }
     }
 
@@ -320,7 +324,7 @@ public class InMemoryTaskManager implements TaskManager {
         }
         int i = generateId();
         Tasks.put(i, task);
-        Tasks.get(i).id = i;
+        Tasks.get(i).setId(i);
         System.out.println("Задача успешно создана.");
     }
 
@@ -358,17 +362,17 @@ public class InMemoryTaskManager implements TaskManager {
             boolean isNew = true;
             boolean isDone = true;
             int count = 0;
-            int id = o.id;
+            int id = o.getId();
             for (SubTask obj : subTasks.values()) {
                 if (o.getId().equals(obj.getEpicID())) {
                     count++;
-                    if (obj.status != Status.NEW) isNew = false;
-                    if (obj.status != Status.DONE) isDone = false;
+                    if (obj.getStatus() != Status.NEW) isNew = false;
+                    if (obj.getStatus() != Status.DONE) isDone = false;
                 }
             }
-            if (isNew || count == 0) epicTasks.get(id).status = Status.NEW;
-            else if (isDone) epicTasks.get(id).status = Status.DONE;
-            else epicTasks.get(id).status = Status.IN_PROGRESS;
+            if (isNew || count == 0) epicTasks.get(id).setStatus(Status.NEW);
+            else if (isDone) epicTasks.get(id).setStatus(Status.DONE);
+            else epicTasks.get(id).setStatus(Status.IN_PROGRESS);
         }
     }
 }

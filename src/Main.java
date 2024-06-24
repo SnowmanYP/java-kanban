@@ -1,3 +1,9 @@
+import manager.InMemoryTaskManager;
+import status.Status;
+import task.Epic;
+import task.SubTask;
+import task.Task;
+
 public class Main {
     public static void main(String[] args) {
         InMemoryTaskManager manager = new InMemoryTaskManager();
@@ -33,11 +39,11 @@ public class Main {
         manager.printAllTasks();
         Task newTask1 = new Task("Для первой простой", "изменяем статус задачи new->in-progress");
         newTask1.setStatus(Status.IN_PROGRESS);
-        newTask1.setId(task1.id);
+        newTask1.setId(task1.getId());
         manager.updateTask(newTask1);
         Task newTask2 = new Task("Для второй простой", "изменяем статус задачи new->done");
         newTask2.setStatus(Status.DONE);
-        newTask2.setId(task2.id);
+        newTask2.setId(task2.getId());
         manager.updateTask(newTask2);
         System.out.println("Стало");
         manager.printAllTasks();
@@ -45,28 +51,28 @@ public class Main {
         System.out.println("Меняем статусы подзадач");
         SubTask newSubTask1 = new SubTask("Первая подзадача первой эпической", "Меняем статус ", epic1.getId());
         newSubTask1.setStatus(Status.DONE);
-        newSubTask1.setId(sub1.id);
+        newSubTask1.setId(sub1.getId());
         SubTask newSubTask2 = new SubTask("Вторая подзадача первой эпической", "Меняем статус ", epic1.getId());
         newSubTask2.setStatus(Status.NEW);
-        newSubTask1.setId(sub2.id);
+        newSubTask1.setId(sub2.getId());
         SubTask newSubTask3 = new SubTask("Первая подзадача второй эпической", "Меняем статус ", epic2.getId());
         newSubTask3.setStatus(Status.IN_PROGRESS);
-        newSubTask3.setId(sub3.id);
+        newSubTask3.setId(sub3.getId());
         // Проверьте, что статус задачи и подзадачи сохранился, а статус эпика рассчитался по статусам подзадач.
         System.out.println("Было");
         System.out.println("Эпик с двумя подзадачами");
-        manager.printAllTasksOfOneEpic(epic1.id);
+        manager.printAllTasksOfOneEpic(epic1.getId());
         System.out.println("Эпик с одной подзадачей");
-        manager.printAllTasksOfOneEpic(epic2.id);
+        manager.printAllTasksOfOneEpic(epic2.getId());
         System.out.println();
         manager.updateSubTask(newSubTask1);
         manager.updateSubTask(newSubTask2);
         manager.updateSubTask(newSubTask3);
         System.out.println("Стало");
         System.out.println("Эпик с двумя подзадачами");
-        manager.printAllTasksOfOneEpic(epic1.id);
+        manager.printAllTasksOfOneEpic(epic1.getId());
         System.out.println("Эпик с одной подзадачей");
-        manager.printAllTasksOfOneEpic(epic2.id);
+        manager.printAllTasksOfOneEpic(epic2.getId());
         //И, наконец, попробуйте удалить одну из задач и один из эпиков.
         /*System.out.println("\nИ, наконец, попробуйте удалить одну из задач и один из эпиков.");
         System.out.println("Было");
@@ -92,7 +98,7 @@ public class Main {
         manager.printAllEpicTasks();
         System.out.println();
         manager.printAllSubTasks();*/
-        //Тестируем историю просмотров - память=5,
+        //Тестируем историю просмотров - CAPACITY должно быть == 5,
         manager.getTask(1);
         manager.getTask(2);
         manager.getEpicTask(3);
