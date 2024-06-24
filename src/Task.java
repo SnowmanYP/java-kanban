@@ -47,7 +47,7 @@ public class Task {
     @Override  // "...При этом две задачи с одинаковым id должны выглядеть для менеджера как одна и та же."
     public boolean equals(Object obj){
     if (this==obj) return true;
-    if (obj==null || getClass()!=obj.getClass()) return false;
+    if (obj==null || getClass()!=obj.getClass() && !(obj instanceof Task)) return false;
     return Objects.equals(id,((Task) obj).id);
     }
 

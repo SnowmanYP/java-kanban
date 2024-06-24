@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        TaskManager manager = new TaskManager();
+        InMemoryTaskManager manager = new InMemoryTaskManager();
         //Создайте две задачи, ...
         Task task1 = new Task("Первая простая задача", "Абракадабра");
         Task task2 = new Task("Вторая простая задача", "Описание");
@@ -68,7 +68,7 @@ public class Main {
         System.out.println("Эпик с одной подзадачей");
         manager.printAllTasksOfOneEpic(epic2.id);
         //И, наконец, попробуйте удалить одну из задач и один из эпиков.
-        System.out.println("\nИ, наконец, попробуйте удалить одну из задач и один из эпиков.");
+        /*System.out.println("\nИ, наконец, попробуйте удалить одну из задач и один из эпиков.");
         System.out.println("Было");
         manager.deleteAllTasks(); //Было
         manager.deleteTask(task2.id); //Удаление простой задачи
@@ -80,9 +80,9 @@ public class Main {
         manager.deleteEpicTask(epic1.id); //Если удаляем эпик, метод удаляет подзадачи
         System.out.println("Стало");
         manager.printAllEpicTasks(); //Стало
-        manager.printAllSubTasks();
+        manager.printAllSubTasks();*/
         //Если удалить все подзадачи, то статус Большой задачи должен быть NEW
-        System.out.println();
+       /* System.out.println();
         manager.printAllEpicTasks();
         System.out.println();
         manager.printAllSubTasks();
@@ -91,6 +91,18 @@ public class Main {
         System.out.println();
         manager.printAllEpicTasks();
         System.out.println();
-        manager.printAllSubTasks();
-    }
+        manager.printAllSubTasks();*/
+        //Тестируем историю просмотров - память=5,
+        manager.getTask(1);
+        manager.getTask(2);
+        manager.getEpicTask(3);
+        manager.getSubTask(4);
+        manager.getSubTask(5);
+        //Заполнили -
+        System.out.println();
+        manager.historyManager.printHistory(); //Смортим - все ОК
+        manager.getEpicTask(6); // Превышаем объем памяти
+        System.out.println();
+         manager.historyManager.printHistory(); //Смортим - все ОК
+   }
 }
