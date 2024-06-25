@@ -1,42 +1,35 @@
 package managers;
 
 import manager.InMemoryTaskManager;
-import status.Status;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import status.Status;
 import task.Task;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class InMemoryHistoryManagerTest {
     // ТЗ - убедитесь, что задачи, добавляемые в HistoryManager, сохраняют предыдущую версию задачи и её данных.
     private static InMemoryTaskManager manager = new InMemoryTaskManager();
-    private static ArrayList<Task> checklist = new ArrayList<>();
+    private static List<Task> checklist = new ArrayList<>(10);
 
     @BeforeAll
     static void beforeAll() {
         Task task;
-        for (int i = 1; i <= 10; i++) {
-            task = new Task("task number " + i, "description of task " + i);
-            task.setStatus(randomStatus()); //  и присвоим разные статусы новым задачам случайным образом
-            manager.createTask(task); //создаем задачу
-            manager.getTask(i); //При вызове этого метода объект добавляется в историю
+        for (int i = InMemoryTaskManager.getID(); i <= 10; i++) {
+            task = new Task("task number " + (i+1), "description of task " + (i+1));
+            task.setStatus(Status.NEW);
+            manager.createTask(task); //создаем задачу - здесь ID увеличивается на единицу, поэтому getTask(i+1)
+            manager.getTask(i+1); //При вызове этого метода объект добавляется в историю
             checklist.add(task); //Добавляем задачу в контрольный список
         }
     }
 
-    private static final Random random = new Random();
-
-    public static Status randomStatus() { //Генерим случайный статус;
-        Status[] directions = Status.values();
-        return directions[random.nextInt(directions.length)];
-    }
-
-    @Test
+       @Test
     void shouldReturnListEquality() { //Сравниваем историю с контрольным списком
-        assertEquals(manager.historyManager.getHistory(),checklist,"Incorrect");
+   assertEquals(manager.getHistoryManager().getHistory(),checklist,"Incorrect");
     }
 }

@@ -5,8 +5,8 @@ import task.Epic;
 import task.SubTask;
 import task.Task;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
     private HashMap<Integer, Epic> epicTasks = new HashMap<>();
@@ -14,15 +14,28 @@ public class InMemoryTaskManager implements TaskManager {
     private HashMap<Integer, Task> Tasks = new HashMap<>();
     private static int ID;
 
-    public InMemoryHistoryManager historyManager=new InMemoryHistoryManager();
-    static protected int generateId() {
-        return ++ID;
+private HistoryManager historyManager=Managers.getDefaultHistory(); // по ТЗ - статический метод
+
+public HistoryManager getHistoryManager() {
+        return historyManager;
     }
 
-    //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
+public void setHistoryManager(HistoryManager historyManager) {
+        this.historyManager = historyManager;
+}
+
+public static int getID() {
+    return ID;
+}
+
+static protected int generateId() {
+    return ++ID;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
 
     @Override
-    public ArrayList<Task> getHistory() {
+    public List<Task> getHistory() {
         return historyManager.getHistory();//history;
     }
 
@@ -30,7 +43,7 @@ public class InMemoryTaskManager implements TaskManager {
     private void addEpicTask(String name, String description, Status status) {
         int i = generateId();
         epicTasks.put(i, new Epic(name, description));
-        epicTasks.get(i).setId(i);   //id = i;
+        epicTasks.get(i).setId(i);
         System.out.println("Большая задача добавлена.");
     }
 

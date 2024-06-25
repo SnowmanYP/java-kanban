@@ -106,9 +106,12 @@ public class Main {
         manager.getSubTask(5);
         //Заполнили -
         System.out.println();
-        manager.historyManager.printHistory(); //Смортим - все ОК
+        //manager.historyManager.printHistory(); //Смортим - все ОК
+        manager.getHistoryManager().printHistory();
         manager.getEpicTask(6); // Превышаем объем памяти
         System.out.println();
-         manager.historyManager.printHistory(); //Смортим - все ОК
+        manager.getHistoryManager().printHistory();
+        //manager.historyManager.printHistory(); //Смортим - все ОК
+
    }
 }
