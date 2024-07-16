@@ -36,7 +36,7 @@ static protected int generateId() {
 
     @Override
     public List<Task> getHistory() {
-        return historyManager.getHistory();//history;
+        return historyManager.getHistory();
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --EPIC--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ static protected int generateId() {
             System.out.println("Нет записи с таким идентификатором!");
             return null;
         }
-        historyManager.add(epicTasks.get(id)); //addHistory(epicTasks.get(id));
+        historyManager.add(epicTasks.get(id));
         return epicTasks.get(id);
     }
 
@@ -143,14 +143,17 @@ static protected int generateId() {
             System.out.println("Нет задачи с таким идентификатором");
             return;
         }
+
         /// .... Вместе с главной задачей нужно удалить и подзадачи!!!
         HashMap<Integer, SubTask> copy = new HashMap<>(subTasks); // Создаем копию, это поможет в дальнейшем
         //избежать ConcurrentModificationException
         for (SubTask obj : copy.values()) {
             if (obj.getEpicID() == epicTasks.get(id).getId()) {
+                historyManager.remove(obj.getId());
                 subTasks.remove(obj.getId());
             }
         }
+        historyManager.remove(id);
         epicTasks.remove(id);
         System.out.println("Большая задача удалена");
     }
@@ -204,7 +207,7 @@ static protected int generateId() {
             System.out.println("Нет записи с таким идентификатором!");
             return null;
         }
-        historyManager.add(subTasks.get(id));// addHistory(subTasks.get(id));
+        historyManager.add(subTasks.get(id));
         return subTasks.get(id);
     }
 
@@ -285,6 +288,7 @@ static protected int generateId() {
             System.out.println("Нет задачи с таким идентификатором");
             return;
         }
+        historyManager.remove(id);
         subTasks.remove(id);
         recalcOfStatus();
         System.out.println("Подзадача удалена");
@@ -325,8 +329,8 @@ static protected int generateId() {
             System.out.println("Нет записи с таким идентификатором!");
             return null;
         }
-        historyManager.add(Tasks.get(id)); //addHistory(Tasks.get(id));
-        return Tasks.get(id);
+        historyManager.add(Tasks.get(id));
+         return Tasks.get(id);
     }
 
     @Override
@@ -365,6 +369,7 @@ static protected int generateId() {
         if (!Tasks.containsKey(id)) {
             System.out.println("Нет задачи с таким идентификатором");
         }
+        historyManager.remove(id);
         Tasks.remove(id);
         System.out.println("Задача удалена");
     }

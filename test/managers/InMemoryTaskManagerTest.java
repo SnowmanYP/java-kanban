@@ -1,6 +1,7 @@
 package managers;
 
 import manager.InMemoryTaskManager;
+import org.junit.jupiter.api.AfterAll;
 import status.Status;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -25,6 +26,12 @@ class InMemoryTaskManagerTest {
        epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
     }
 
+    @AfterAll
+    static void AfterAll(){
+        manager.deleteAllSubTasks();
+        manager.deleteAllEpicTasks();
+        manager.deleteAllTasks();
+    }
 //ТЗ - проверьте, что InMemoryTaskManager действительно добавляет задачи разного типа и может найти их по id;
 
     @Test
