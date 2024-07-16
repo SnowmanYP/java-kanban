@@ -29,13 +29,24 @@ public class InMemoryHistoryManager implements HistoryManager {
         //проверки 1 если удаляем первый, последний, единственный и т.д.
         if (historyMap.isEmpty()) return;
         if (!historyMap.containsKey(id)) return;
-        if (head==tail) {historyMap=null; head=null; tail=null; return;}
-        if (historyMap.get(id)==head) { head=historyMap.get(id).next; head.prev=null; } else
-        if (historyMap.get(id)==tail) { tail=historyMap.get(id).prev; tail.next=null; } else {
-        historyMap.get(id).prev.next = historyMap.get(id).next;
-        historyMap.get(id).next.prev = historyMap.get(id).prev; }
+        if (head == tail) {
+            historyMap = null;
+            head = null;
+            tail = null;
+            return;
+        }
+        if (historyMap.get(id) == head) {
+            head = historyMap.get(id).next;
+            head.prev = null;
+        } else if (historyMap.get(id) == tail) {
+            tail = historyMap.get(id).prev;
+            tail.next = null;
+        } else {
+            historyMap.get(id).prev.next = historyMap.get(id).next;
+            historyMap.get(id).next.prev = historyMap.get(id).prev;
+        }
         historyMap.remove(id);
-     }
+    }
 
     @Override
     public List<Task> getHistory() {
@@ -72,7 +83,7 @@ public class InMemoryHistoryManager implements HistoryManager {
         //Т.З. - В качестве параметра этот метод должен принимать объект Node — узел связного списка — и удалять его.
         if (historyMap.isEmpty()) return;
         if (!historyMap.containsValue(node)) return;
-        Task task= (Task) node.getTask(); // Cast expression to task.Task ?? - требует явное приведение типов
+        Task task = (Task) node.getTask(); // Cast expression to task.Task ?? - требует явное приведение типов
         remove(task.getId());
     }
 

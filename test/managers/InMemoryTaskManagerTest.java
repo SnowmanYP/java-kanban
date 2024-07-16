@@ -21,13 +21,13 @@ class InMemoryTaskManagerTest {
 
     @BeforeAll
     static void beforeEach() {
-       manager = new InMemoryTaskManager();
-       task1 = new Task("Первая простая задача", "Абракадабра");
-       epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
+        manager = new InMemoryTaskManager();
+        task1 = new Task("Первая простая задача", "Абракадабра");
+        epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
     }
 
     @AfterAll
-    static void AfterAll(){
+    static void AfterAll() {
         manager.deleteAllSubTasks();
         manager.deleteAllEpicTasks();
         manager.deleteAllTasks();
@@ -42,6 +42,7 @@ class InMemoryTaskManagerTest {
         manager.createSubTask(sub1);
         assertNotNull(manager.getSubTask(sub1.getId()), "Подзадача не найдена");
     }
+
     @Test
     void createAndGetEpicTask() { //Теститируем создание и поиск эпика
         manager.createEpicTask(epic1);
@@ -55,14 +56,10 @@ class InMemoryTaskManagerTest {
         manager.printAllTasks();
         assertNotNull(manager.getTask(task1.getId()), "Задача не найдеа");
     }
-
 // ТЗ -проверьте, что задачи с заданным id и сгенерированным id не конфликтуют внутри менеджера;
 // id - задачи любого уровня задается при ее создании. В этом коде нет такого понятия - заданный id.
 // Поэтому: 1. Невозможно создать такой тест.
 //          2. Он не имеет смысла.
-
-
-
 //ТЗ - создайте тест, в котором проверяется неизменность задачи (по всем полям) при добавлении задачи в менеджер
 
     @Test
