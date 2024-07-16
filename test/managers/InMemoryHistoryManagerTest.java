@@ -15,7 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class InMemoryHistoryManagerTest {
     // ТЗ - убедитесь, что задачи, добавляемые в HistoryManager, сохраняют предыдущую версию задачи и её данных.
 
-    private static List<Task> checklist = new ArrayList<>(10);
+    private static List<Task> checklist = new ArrayList<>();
+
 
 
        @Test
