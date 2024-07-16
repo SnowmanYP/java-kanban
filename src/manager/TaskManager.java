@@ -8,44 +8,46 @@ import java.util.List;
 
 public interface TaskManager {
 
-      void printAllEpicTasks();
+    void printAllEpicTasks();
 
-      void deleteAllEpicTasks();
+    void deleteAllEpicTasks();
 
-      Epic getEpicTask(Integer id);
+    Epic getEpicTask(Integer id);
 
-      void createEpicTask(Epic epicTask);
+    void createEpicTask(Epic epicTask);
 
-      void updateEpicTask(Epic epicTask);
+    void updateEpicTask(Epic epicTask);
 
-      void deleteEpicTask(Integer id);
+    void deleteEpicTask(Integer id);
 
-      void printAllTasksOfOneEpic(Integer id);
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --SUB--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      void printAllSubTasks();
+    void printAllTasksOfOneEpic(Integer id);
 
-      void deleteAllSubTasks();
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --SUB--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    void printAllSubTasks();
 
-      SubTask getSubTask(Integer id);
+    void deleteAllSubTasks();
 
-      void createSubTask(SubTask subTask);
+    SubTask getSubTask(Integer id);
 
-      void updateSubTask(SubTask subTask);
+    void createSubTask(SubTask subTask);
 
-      void deleteSubTask(Integer id);
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      void printAllTasks();
+    void updateSubTask(SubTask subTask);
 
-      void deleteAllTasks();
+    void deleteSubTask(Integer id);
 
-      Task getTask(Integer id);
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    void printAllTasks();
 
-      void createTask(Task task);
-      void updateTask(Task task);
+    void deleteAllTasks();
 
-      void deleteTask(Integer id);
+    Task getTask(Integer id);
 
-        //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
+    void createTask(Task task);
 
-      List<Task> getHistory();
+    void updateTask(Task task);
+
+    void deleteTask(Integer id);
+    //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
+
+    List<Task> getHistory();
 }

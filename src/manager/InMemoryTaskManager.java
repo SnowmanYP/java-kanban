@@ -11,27 +11,26 @@ import java.util.List;
 public class InMemoryTaskManager implements TaskManager {
     private HashMap<Integer, Epic> epicTasks = new HashMap<>();
     private HashMap<Integer, SubTask> subTasks = new HashMap<>();
-    private HashMap<Integer, Task> Tasks = new HashMap<>();
+    private HashMap<Integer, Task> tasks = new HashMap<>();
     private static int ID;
 
-private HistoryManager historyManager=Managers.getDefaultHistory(); // по ТЗ - статический метод
+    private HistoryManager historyManager = Managers.getDefaultHistory(); // по ТЗ - статический метод
 
-public HistoryManager getHistoryManager() {
+    public HistoryManager getHistoryManager() {
         return historyManager;
     }
 
-public void setHistoryManager(HistoryManager historyManager) {
+    public void setHistoryManager(HistoryManager historyManager) {
         this.historyManager = historyManager;
-}
+    }
 
-public static int getID() {
-    return ID;
-}
+    public static int getID() {
+        return ID;
+    }
 
-static protected int generateId() {
-    return ++ID;
-}
-
+    protected static int generateId() {
+        return ++ID;
+    }
 //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
 
     @Override
@@ -52,9 +51,7 @@ static protected int generateId() {
         if (epicTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : epicTasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле id-'" + epicTasks.get(i).getId() + "' Название задачи-'"
-                        + epicTasks.get(i).getTaskName() + "' Описание задачи-'" + epicTasks.get(i).getDescription()
-                        + "' Статус задачи-'" + epicTasks.get(i).getStatus() + "'");
+                System.out.println("ID_Key-'" + i + "' поле id-'" + epicTasks.get(i).getId() + "' Название задачи-'" + epicTasks.get(i).getTaskName() + "' Описание задачи-'" + epicTasks.get(i).getDescription() + "' Статус задачи-'" + epicTasks.get(i).getStatus() + "'");
         }
     }
 
@@ -111,8 +108,8 @@ static protected int generateId() {
         }
         epicTasks.replace(epicTask.getId(), epicTask);
         System.out.println("Большая задача обновлена");
-        if (epicTask.getStatus().equals(Status.NEW)) {//Если у обновленной большой задачи статус NEW
-            //все соответствующие подзадачи должны быть NEW
+        //Если у обновленной большой задачи статус NEW все соответствующие подзадачи должны быть NEW
+        if (epicTask.getStatus().equals(Status.NEW)) {
             for (SubTask obj : subTasks.values()) {
                 if (obj.getEpicID().equals(epicTask.getId())) {
                     obj.setStatus(Status.NEW);
@@ -143,7 +140,6 @@ static protected int generateId() {
             System.out.println("Нет задачи с таким идентификатором");
             return;
         }
-
         /// .... Вместе с главной задачей нужно удалить и подзадачи!!!
         HashMap<Integer, SubTask> copy = new HashMap<>(subTasks); // Создаем копию, это поможет в дальнейшем
         //избежать ConcurrentModificationException
@@ -184,10 +180,7 @@ static protected int generateId() {
         if (subTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : subTasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).getId() + "' Название задачи-'"
-                        + subTasks.get(i).getTaskName() + "' Описание задачи-'" + subTasks.get(i).getDescription()
-                        + "' Статус задачи-'" + subTasks.get(i).getStatus() + "'" + " epicID-'" + subTasks.get(i).getEpicID()
-                        + "'");
+                System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).getId() + "' Название задачи-'" + subTasks.get(i).getTaskName() + "' Описание задачи-'" + subTasks.get(i).getDescription() + "' Статус задачи-'" + subTasks.get(i).getStatus() + "'" + " epicID-'" + subTasks.get(i).getEpicID() + "'");
         }
     }
 
@@ -214,7 +207,7 @@ static protected int generateId() {
     @Override
     public void createSubTask(SubTask subTask) { // d. Создание. Сам объект должен передаваться в качестве параметра.
         //Проверка на соответствие типу
-       boolean isEpic = false;
+        boolean isEpic = false;
         if (subTask == null) {
             System.out.println("Получена пустая ссылка");
             return;
@@ -297,40 +290,38 @@ static protected int generateId() {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private void addTask(String name, String description, Status status) {
         int i = generateId();
-        Tasks.put(i, new Task(name, description));
-        Tasks.get(i).setId(i);
+        tasks.put(i, new Task(name, description));
+        tasks.get(i).setId(i);
         System.out.println("Добавлена простая задача.");
     }
 
     @Override
     public void printAllTasks() {  //a. Получение списка всех задач. - вывод в консоль.
-        if (Tasks.isEmpty()) System.out.println("Нет задач в списке");
+        if (tasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
-            for (Integer i : Tasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле_id-'" + Tasks.get(i).getId() + "' Название задачи-'"
-                        + Tasks.get(i).getTaskName() + "' Описание задачи-'" + Tasks.get(i).getDescription()
-                        + "' Статус задачи-'" + Tasks.get(i).getStatus() + "'");
+            for (Integer i : tasks.keySet())
+                System.out.println("ID_Key-'" + i + "' поле_id-'" + tasks.get(i).getId() + "' Название задачи-'" + tasks.get(i).getTaskName() + "' Описание задачи-'" + tasks.get(i).getDescription() + "' Статус задачи-'" + tasks.get(i).getStatus() + "'");
         }
     }
 
     @Override
     public void deleteAllTasks() { // b. Удаление всех задач.
-        Tasks.clear();
+        tasks.clear();
         System.out.println("Список подзадач полностью удален!");
     }
 
     @Override
     public Task getTask(Integer id) { //c. Получение по идентификатору.
-        if (Tasks == null) {
+        if (tasks == null) {
             System.out.println("Списка задач не существует!");
             return null;
         }
-        if (!Tasks.containsKey(id)) {
+        if (!tasks.containsKey(id)) {
             System.out.println("Нет записи с таким идентификатором!");
             return null;
         }
-        historyManager.add(Tasks.get(id));
-         return Tasks.get(id);
+        historyManager.add(tasks.get(id));
+        return tasks.get(id);
     }
 
     @Override
@@ -340,15 +331,15 @@ static protected int generateId() {
             return;
         }
         int i = generateId();
-        Tasks.put(i, task);
-        Tasks.get(i).setId(i);
+        tasks.put(i, task);
+        tasks.get(i).setId(i);
         System.out.println("Задача успешно создана.");
     }
 
     @Override
     public void updateTask(Task task) {
         // e. Обновление.
-        if (Tasks == null || Tasks.isEmpty()) {
+        if (tasks == null || tasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
             return;
         }
@@ -356,21 +347,21 @@ static protected int generateId() {
             System.out.println("Такой задачи не существует");
             return;
         }
-        Tasks.replace(task.getId(), task);
+        tasks.replace(task.getId(), task);
         System.out.println("Задача обновлена");
     }
 
     @Override
     public void deleteTask(Integer id) {  // f. Удаление по идентификатору.
-        if (Tasks == null || Tasks.isEmpty()) {
+        if (tasks == null || tasks.isEmpty()) {
             System.out.println("Списка задач не существует или список пустой");
             return;
         }
-        if (!Tasks.containsKey(id)) {
+        if (!tasks.containsKey(id)) {
             System.out.println("Нет задачи с таким идентификатором");
         }
         historyManager.remove(id);
-        Tasks.remove(id);
+        tasks.remove(id);
         System.out.println("Задача удалена");
     }
 

@@ -8,8 +8,8 @@ import task.Epic;
 class EpicTest {
 
     @Test
-    void addEpicToYourSelf(){ // проверьте, что объект Epic нельзя добавить в самого себя в виде подзадачи;
-        TaskManager taskManager=new InMemoryTaskManager();
+    void addEpicToYourSelf() { // проверьте, что объект Epic нельзя добавить в самого себя в виде подзадачи;
+        TaskManager taskManager = new InMemoryTaskManager();
         Epic epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
         taskManager.createTask(epic1);
         //Добавить подзадачу в эпик можно только созданием подзадачи - пробуем:
