@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class TaskTest {
 
     @BeforeEach
-    void beforeEach(){
-        TaskManager taskManager=new InMemoryTaskManager();
+    void beforeEach() {
+        TaskManager taskManager = new InMemoryTaskManager();
     }
 
     @Test
@@ -23,7 +23,7 @@ class TaskTest {
         task1.setId(1); //id Присваивается только при создании, вызове метода createTask
         Task task2 = new Task("Вторая простая задача", "Описание");
         task2.setId(1); // поэтому id устанавливается принудительно
-        assertEquals(task1,task2,"Задачи не совпадают");
+        assertEquals(task1, task2, "Задачи не совпадают");
     }
 
     @Test
@@ -32,6 +32,6 @@ class TaskTest {
         epic1.setId(7);
         SubTask sub1 = new SubTask("Первая подзадача", "Первая подзадача первой эпической", epic1.getId());
         sub1.setId(7);
-        assertEquals(epic1,sub1,"Задачи не совпадают");
+        assertEquals(epic1, sub1, "Задачи не совпадают");
     }
 }

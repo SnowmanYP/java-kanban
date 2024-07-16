@@ -1,6 +1,8 @@
 package manager;
 
-public class Node<Task>  {
+import task.Task;
+
+public class Node<T> {
     private Task task;
 
     public Task getTask() {

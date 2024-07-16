@@ -1,0 +1,105 @@
+
+X
+java:S4973—"<Strings and Boxed types should be compared using "equals()".(‹”¹ùÿÿÿÿ
+X
+java:S4973§"<Strings and Boxed types should be compared using "equals()".(‹”¹ùÿÿÿÿ
+ˆ
+java:S1192m"rDefine a constant instead of duplicating this literal "Ğ¢Ğ°ĞºĞ¾Ğ¹ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸ Ğ½Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚" 3 times.(À­ã…
+y
+java:S11929"^Define a constant instead of duplicating this literal "' Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸-'" 3 times.(ûı¾áûÿÿÿÿ
+¯
+java:S1192i"“Define a constant instead of duplicating this literal "Ğ¡Ğ¿Ğ¸ÑĞºĞ° Ğ·Ğ°Ğ´Ğ°Ñ‡ Ğ½Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚ Ğ¸Ğ»Ğ¸ ÑĞ¿Ğ¸ÑĞ¾Ğº Ğ¿ÑƒÑÑ‚Ğ¾Ğ¹" 6 times.(ö¼–¯øÿÿÿÿ
+‰
+java:S1192I"sDefine a constant instead of duplicating this literal "Ğ¡Ğ¿Ğ¸ÑĞºĞ° Ğ·Ğ°Ğ´Ğ°Ñ‡ Ğ½Ğµ ÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒĞµÑ‚!" 3 times.(É¹ÌÂ
+™
+java:S1192M"‚Define a constant instead of duplicating this literal "ĞĞµÑ‚ Ğ·Ğ°Ğ¿Ğ¸ÑĞ¸ Ñ Ñ‚Ğ°ĞºĞ¸Ğ¼ Ğ¸Ğ´ĞµĞ½Ñ‚Ğ¸Ñ„Ğ¸ĞºĞ°Ñ‚Ğ¾Ñ€Ğ¾Ğ¼!" 3 times.(…±¡ñ
+˜
+java:S1192"Define a constant instead of duplicating this literal "ĞĞµÑ‚ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸ Ñ Ñ‚Ğ°ĞºĞ¸Ğ¼ Ğ¸Ğ´ĞµĞ½Ñ‚Ğ¸Ñ„Ğ¸ĞºĞ°Ñ‚Ğ¾Ñ€Ğ¾Ğ¼" 3 times.(°¤°
+†
+java:S1192X"kDefine a constant instead of duplicating this literal "ĞŸĞ¾Ğ»ÑƒÑ‡ĞµĞ½Ğ° Ğ¿ÑƒÑÑ‚Ğ°Ñ ÑÑÑ‹Ğ»ĞºĞ°" 3 times.(â›º¬ıÿÿÿÿ
+x
+java:S11924"bDefine a constant instead of duplicating this literal "ĞĞµÑ‚ Ğ·Ğ°Ğ´Ğ°Ñ‡ Ğ² ÑĞ¿Ğ¸ÑĞºĞµ" 3 times.(‰²æó
+}
+java:S11927"bDefine a constant instead of duplicating this literal "' ĞĞ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸-'" 3 times.(ïô¹âûÿÿÿÿ
+x
+java:S11928"bDefine a constant instead of duplicating this literal "' ĞĞ¿Ğ¸ÑĞ°Ğ½Ğ¸Ğµ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸-'" 3 times.(¢¹
+d
+java:S11927"IDefine a constant instead of duplicating this literal "ID_Key-'" 3 times.(ïô¹âûÿÿÿÿ
+e	java:S116"PRename this field "Tasks" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÀÓ¶
+h
+java:S3008"MRename this field "ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ¢ÓÎûÿÿÿÿ
+K
+java:S1144+"0Remove this unused private "addEpicTask" method.(Ò ï”üÿÿÿÿ
+K
+java:S1144®"/Remove this unused private "addSubTask" method.(Şåôİøÿÿÿÿ
+H
+java:S1144ª",Remove this unused private "addTask" method.(•åÄŸûÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ûˆ¿Û
+H
+java:S1172+"-Remove this unused method parameter "status".(Ò ï”üÿÿÿÿ
+@	java:S106/"+Replace this use of System.out by a logger.(ç´È€
+@	java:S1064"+Replace this use of System.out by a logger.(‰²æó
+J
+java:S28646"4Iterate over the "entrySet" instead of the "keySet".(ƒº®ª
+E	java:S1067"+Replace this use of System.out by a logger.(ïô¹âûÿÿÿÿ
+@	java:S106C"+Replace this use of System.out by a logger.(×œıÒ
+@	java:S106I"+Replace this use of System.out by a logger.(É¹ÌÂ
+@	java:S106M"+Replace this use of System.out by a logger.(…±¡ñ
+E	java:S106X"+Replace this use of System.out by a logger.(â›º¬ıÿÿÿÿ
+E	java:S106\"+Replace this use of System.out by a logger.(ßÂÿíûÿÿÿÿ
+E	java:S106b"+Replace this use of System.out by a logger.(´ÚÕÑüÿÿÿÿ
+E	java:S106i"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ
+@	java:S106m"+Replace this use of System.out by a logger.(À­ã…
+E	java:S106q"+Replace this use of System.out by a logger.(ˆî¨³ÿÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
+F	java:S106‹"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(°¤°
+F	java:S106"+Replace this use of System.out by a logger.(¥æ±€úÿÿÿÿ
+@	java:S106¤"+Replace this use of System.out by a logger.(Óê´
+F	java:S106¥"+Replace this use of System.out by a logger.(¬÷óîûÿÿÿÿ
+A	java:S106¨"+Replace this use of System.out by a logger.(Áªø
+I
+java:S1172®"-Remove this unused method parameter "status".(Şåôİøÿÿÿÿ
+F	java:S106³"+Replace this use of System.out by a logger.(ÍñÀ÷ûÿÿÿÿ
+A	java:S106¸"+Replace this use of System.out by a logger.(æ¯×ˆ
+P
+java:S2864º"4Iterate over the "entrySet" instead of the "keySet".(˜¿Šÿÿÿÿÿ
+A	java:S106»"+Replace this use of System.out by a logger.(µŞ¨Š
+F	java:S106Å"+Replace this use of System.out by a logger.(½„öüÿÿÿÿ
+A	java:S106Ë"+Replace this use of System.out by a logger.(É¹ÌÂ
+A	java:S106Ï"+Replace this use of System.out by a logger.(…±¡ñ
+F	java:S106Û"+Replace this use of System.out by a logger.(â›º¬ıÿÿÿÿ
+A	java:S106ß"+Replace this use of System.out by a logger.(ü“Ê†
+F	java:S106æ"+Replace this use of System.out by a logger.(Êáâûşÿÿÿÿ
+F	java:S106ì"+Replace this use of System.out by a logger.(šÀÎóıÿÿÿÿ
+F	java:S106ğ"+Replace this use of System.out by a logger.(Ã•ëıûÿÿÿÿ
+A	java:S106õ"+Replace this use of System.out by a logger.(¹ğÍ
+n
+java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(êçú»üÿÿÿÿ
+F	java:S106€"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ
+A	java:S106„"+Replace this use of System.out by a logger.(À­ã…
+A	java:S106–"+Replace this use of System.out by a logger.(ëÄî‡
+F	java:S106œ"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ
+@	java:S106 "+Replace this use of System.out by a logger.(°¤°
+F	java:S106¦"+Replace this use of System.out by a logger.(˜èÍ•ûÿÿÿÿ
+I
+java:S1172ª"-Remove this unused method parameter "status".(•åÄŸûÿÿÿÿ
+F	java:S106®"+Replace this use of System.out by a logger.(æä”Ùùÿÿÿÿ
+F	java:S106³"+Replace this use of System.out by a logger.(í²÷üÿÿÿÿ
+P
+java:S2864µ"4Iterate over the "entrySet" instead of the "keySet".(¥…—òÿÿÿÿÿ
+F	java:S106¶"+Replace this use of System.out by a logger.(æÊ¼Òüÿÿÿÿ
+F	java:S106¿"+Replace this use of System.out by a logger.(½„öüÿÿÿÿ
+A	java:S106Å"+Replace this use of System.out by a logger.(É¹ÌÂ
+A	java:S106É"+Replace this use of System.out by a logger.(…±¡ñ
+F	java:S106Ó"+Replace this use of System.out by a logger.(â›º¬ıÿÿÿÿ
+A	java:S106Ù"+Replace this use of System.out by a logger.(¯á‡
+F	java:S106à"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ
+A	java:S106ä"+Replace this use of System.out by a logger.(À­ã…
+A	java:S106è"+Replace this use of System.out by a logger.(ÖìÛˆ
+F	java:S106î"+Replace this use of System.out by a logger.(ö¼–¯øÿÿÿÿ
+@	java:S106ò"+Replace this use of System.out by a logger.(°¤°
+F	java:S106ö"+Replace this use of System.out by a logger.(Ô¾Ÿıÿÿÿÿ
+i
+java:S3776ú"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÅöæÌ
