@@ -214,3 +214,5 @@ H
 test/tasks/EpicTest.java,3\2\325a2526977414f84035be29d6d65a61e068a431
 H
 test/tasks/TaskTest.java,6\2\62bbd125811b7b2ad6d7d4c6659712183ff9d78f
+T
+$src/manager/InMemoryTaskManager.java,a\a\aa928e2b414d2c845d9fdad53e0c5bb8aad86dc4

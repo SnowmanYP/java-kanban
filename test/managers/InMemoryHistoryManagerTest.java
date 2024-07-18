@@ -8,6 +8,7 @@ import task.SubTask;
 import task.Task;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,8 +29,9 @@ class InMemoryHistoryManagerTest {
             manager.getTask(i + 1); //При вызове этого метода объект добавляется в историю
             checklist.add(task); //Добавляем задачу в контрольный список
         }
-        assertEquals(manager.getHistoryManager().getHistory(), checklist, "Incorrect");
-
+        assertEquals(manager.getHistoryManager().getHistory(true), checklist, "Incorrect");
+        Collections.reverse(checklist);
+        assertEquals(manager.getHistoryManager().getHistory(false), checklist, "Incorrect");
     }
     //manager.getHistoryManager().getHistory() - теперь обращается к новой структуре данных.
 
@@ -40,24 +42,23 @@ class InMemoryHistoryManagerTest {
         Epic epic1 = new Epic("Первая эпическая", "Не битва и не война, просто задача");
         manager.createEpicTask(epic1);
         manager.getEpicTask(epic1.getId());
-        assertNotNull(manager.getHistoryManager().getHistory());
-        assertTrue(manager.getHistoryManager().getHistory().contains(epic1));
+        assertNotNull(manager.getHistoryManager().getHistory(true));
+        assertTrue(manager.getHistoryManager().getHistory(true).contains(epic1));
         SubTask sub1 = new SubTask("Первая подзадача", "Первая подзадача первой эпической", epic1.getId());
         SubTask sub2 = new SubTask("Вторая подзадача", "Вторая подзадача первой эпической", epic1.getId());
         SubTask sub4 = new SubTask("Третья подзадача", "Третья подзадача первой эпической", epic1.getId());
         manager.createSubTask(sub1);
         manager.getSubTask(sub1.getId());
-        assertTrue(manager.getHistoryManager().getHistory().contains(sub1));
+        assertTrue(manager.getHistoryManager().getHistory(true).contains(sub1));
         manager.createSubTask(sub2);
         manager.getSubTask(sub2.getId());
         manager.createSubTask(sub4);
         manager.getSubTask(sub4.getId());
         //Создали epic с тремя подзадачами
-        assertFalse(manager.getHistoryManager().getHistory().isEmpty(), "Истории не существует");
+        assertFalse(manager.getHistoryManager().getHistory(true).isEmpty(), "Истории не существует");
         manager.deleteEpicTask(epic1.getId()); //После удаления эпика должны удалиться подзадачи и сам эпик
         // , а также история
-        assertTrue(manager.getHistoryManager().getHistory().isEmpty(), "История не удалена");
+        assertTrue(manager.getHistoryManager().getHistory(true).isEmpty(), "История не удалена");
     }
-    //Все сложные тесты делались в main
 }
 

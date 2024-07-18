@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface TaskManager {
 
+    List<Task> getHistory(boolean order);
+
     void printAllEpicTasks();
 
     void deleteAllEpicTasks();
@@ -47,7 +49,4 @@ public interface TaskManager {
     void updateTask(Task task);
 
     void deleteTask(Integer id);
-    //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
-
-    List<Task> getHistory();
 }

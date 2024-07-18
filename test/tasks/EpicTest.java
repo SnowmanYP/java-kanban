@@ -15,6 +15,5 @@ class EpicTest {
         //Добавить подзадачу в эпик можно только созданием подзадачи - пробуем:
         // taskManager.createSubTask(epic1); //java: incompatible types: Epic cannot be converted to SubTask
         //Невозможно построить тест для проверки, код не компилируется
-        //....
     }
 }

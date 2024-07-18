@@ -8,7 +8,6 @@ public class Main {
 
     public static void main(String[] args) {
         InMemoryTaskManager manager = new InMemoryTaskManager();
-        //InMemoryHistoryManager historyManager=new InMemoryHistoryManager();
         //Создайте две задачи, ...
         Task task1 = new Task("Первая простая задача", "Абракадабра");
         Task task2 = new Task("Вторая простая задача", "Описание");
@@ -76,31 +75,7 @@ public class Main {
         System.out.println("Эпик с одной подзадачей");
         manager.printAllTasksOfOneEpic(epic2.getId());
         //И, наконец, попробуйте удалить одну из задач и один из эпиков.
-        /*System.out.println("\nИ, наконец, попробуйте удалить одну из задач и один из эпиков.");
-        System.out.println("Было");
-        manager.deleteAllTasks(); //Было
-        manager.deleteTask(task2.id); //Удаление простой задачи
-        System.out.println("Стало");
-        manager.deleteAllTasks(); //Стало
-        System.out.println("Было");
-        manager.printAllEpicTasks(); //Было
-        manager.printAllSubTasks();
-        manager.deleteEpicTask(epic1.id); //Если удаляем эпик, метод удаляет подзадачи
-        System.out.println("Стало");
-        manager.printAllEpicTasks(); //Стало
-        manager.printAllSubTasks();*/
         //Если удалить все подзадачи, то статус Большой задачи должен быть NEW
-       /* System.out.println();
-        manager.printAllEpicTasks();
-        System.out.println();
-        manager.printAllSubTasks();
-        System.out.println();
-        manager.deleteSubTask(sub3.id);
-        System.out.println();
-        manager.printAllEpicTasks();
-        System.out.println();
-        manager.printAllSubTasks();*/
-
     /*
     Дополнительное задание. Реализуем пользовательский сценарий
     Если у вас останется время, вы можете выполнить дополнительное задание. Реализуйте в классе Main опциональный
@@ -117,25 +92,11 @@ public class Main {
         manager.getSubTask(4);
         manager.getSubTask(5);
         manager.getSubTask(8);
-        System.out.println(manager.getHistoryManager().getHistory()); //Все тесты пройдены++
-        /*manager.getTask(1);
-        manager.getTask(2);
-        manager.getEpicTask(3);
-        manager.getSubTask(5);*/
+        System.out.println("\n" + manager.getHistoryManager().getHistory(true) + "\n"); //История - прямой порядок
+        System.out.println(manager.getHistoryManager().getHistory(false)); //История - обратный порядок
 //    3. После каждого запроса выведите историю и убедитесь, что в ней нет повторов. //++
-//      System.out.println(manager.getHistoryManager().getHistory());
 //    4. Удалите задачу, которая есть в истории, и проверьте, что при печати она не будет выводиться. //++
-//        manager.deleteTask(1);
-//        System.out.println(manager.getHistoryManager().getHistory()); //++
-//        manager.deleteSubTask(5);
-//        System.out.println(manager.getHistoryManager().getHistory()); //++
 //    5. Удалите эпик с тремя подзадачами и убедитесь, что из истории удалился как сам эпик, так и все его подзадачи. //++
-        int i = epic1.getId();
-        manager.printAllTasksOfOneEpic(i);
-        System.out.println(manager.getHistoryManager().getHistory());
-        manager.deleteEpicTask(i);
-        System.out.println(manager.getHistoryManager().getHistory());
 //    Обратите внимание, что выполнение этого задания необязательно.
-        //Все тесты пройдены++
     }
 }

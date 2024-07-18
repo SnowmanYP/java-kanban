@@ -34,8 +34,8 @@ public class InMemoryTaskManager implements TaskManager {
 //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
 
     @Override
-    public List<Task> getHistory() {
-        return historyManager.getHistory();
+    public List<Task> getHistory(boolean order) {
+        return historyManager.getHistory(order);
     }
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --EPIC--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

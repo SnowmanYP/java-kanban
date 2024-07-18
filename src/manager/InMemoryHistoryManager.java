@@ -5,8 +5,7 @@ import task.Task;
 import java.util.*;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    //private final int CAPACITY = 10; //5 - если тестировать в Main
-    public List<Task> history = new ArrayList<>(/*CAPACITY*/);
+    public List<Task> history = new ArrayList<>();
     public Map<Integer, Node> historyMap = new HashMap<>();
 
     private Node head = null;
@@ -49,8 +48,13 @@ public class InMemoryHistoryManager implements HistoryManager {
     }
 
     @Override
-    public List<Task> getHistory() {
-        return getTasks();
+    public List<Task> getHistory(boolean order) {
+        List<Task> directOrRevers = new ArrayList<>();
+        directOrRevers = getTasks();
+        if (!order) {
+            Collections.reverse(directOrRevers);
+        }
+        return directOrRevers;
     } //Т.З. - Реализация метода getHistory должна перекладывать задачи из связного списка в ArrayList для ответа.
 
     private void linkLast(Task task) {
@@ -72,12 +76,16 @@ public class InMemoryHistoryManager implements HistoryManager {
         //Т.З. - будет собирать все задачи из него в обычный ArrayList
         List<Task> tasks = new ArrayList<>();
         Node iterator = head;
-        while (iterator != null) { //==null!!
+        while (iterator != null) {
             tasks.add((Task) iterator.getTask());
             iterator = iterator.next;
         }
         return tasks;
     }
+
+   /* private List<Task> getReversTasks() {
+
+    }*/
 
     private void removeNode(Node node) {
         //Т.З. - В качестве параметра этот метод должен принимать объект Node — узел связного списка — и удалять его.
