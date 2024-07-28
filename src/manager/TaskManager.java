@@ -8,44 +8,45 @@ import java.util.List;
 
 public interface TaskManager {
 
-      void printAllEpicTasks();
+    List<Task> getHistory(boolean order);
 
-      void deleteAllEpicTasks();
+    void printAllEpicTasks();
 
-      Epic getEpicTask(Integer id);
+    void deleteAllEpicTasks();
 
-      void createEpicTask(Epic epicTask);
+    Epic getEpicTask(Integer id);
 
-      void updateEpicTask(Epic epicTask);
+    void createEpicTask(Epic epicTask);
 
-      void deleteEpicTask(Integer id);
+    void updateEpicTask(Epic epicTask);
 
-      void printAllTasksOfOneEpic(Integer id);
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --SUB--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      void printAllSubTasks();
+    void deleteEpicTask(Integer id);
 
-      void deleteAllSubTasks();
+    void printAllTasksOfOneEpic(Integer id);
 
-      SubTask getSubTask(Integer id);
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --SUB--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    void printAllSubTasks();
 
-      void createSubTask(SubTask subTask);
+    void deleteAllSubTasks();
 
-      void updateSubTask(SubTask subTask);
+    SubTask getSubTask(Integer id);
 
-      void deleteSubTask(Integer id);
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      void printAllTasks();
+    void createSubTask(SubTask subTask);
 
-      void deleteAllTasks();
+    void updateSubTask(SubTask subTask);
 
-      Task getTask(Integer id);
+    void deleteSubTask(Integer id);
 
-      void createTask(Task task);
-      void updateTask(Task task);
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task (обычные задачи)--/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    void printAllTasks();
 
-      void deleteTask(Integer id);
+    void deleteAllTasks();
 
-        //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
+    Task getTask(Integer id);
 
-      List<Task> getHistory();
+    void createTask(Task task);
+
+    void updateTask(Task task);
+
+    void deleteTask(Integer id);
 }

@@ -1,6 +1,7 @@
 package task;
 
 import status.Status;
+
 import java.util.Objects;
 
 public class Task {
@@ -48,20 +49,20 @@ public class Task {
     }
 
     @Override  // "...При этом две задачи с одинаковым id должны выглядеть для менеджера как одна и та же."
-    public boolean equals(Object obj){
-    if (this==obj) return true;
-    if (obj==null || getClass()!=obj.getClass() && !(obj instanceof Task)) return false;
-    return Objects.equals(id,((Task) obj).id);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass() && !(obj instanceof Task)) return false;
+        return Objects.equals(id, ((Task) obj).id);
     }
 
     @Override
-    public int hashCode(){
-       return Objects.hash(id);
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
 
     @Override
-    public String toString(){
+    public String toString() {
         if (this == null) {
             return "Нет такой задачи";
         }
