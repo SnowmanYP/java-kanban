@@ -83,10 +83,6 @@ public class InMemoryHistoryManager implements HistoryManager {
         return tasks;
     }
 
-   /* private List<Task> getReversTasks() {
-
-    }*/
-
     private void removeNode(Node node) {
         //Т.З. - В качестве параметра этот метод должен принимать объект Node — узел связного списка — и удалять его.
         if (historyMap.isEmpty()) return;
