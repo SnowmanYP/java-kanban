@@ -9,14 +9,18 @@ public class Task {
     private String taskName;
     private String description;
     private Status status;
+    private TasksType tasksType=TasksType.TASK;
+
+    public void setTasksType(TasksType tasksType) {
+        this.tasksType = tasksType;
+    }
 
     public Integer getId() {
         return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
-    }
+    } //открыт для тестов
 
     public String getTaskName() {
         return taskName;
@@ -40,6 +44,10 @@ public class Task {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public TasksType getTasksType() {
+        return tasksType;
     }
 
     public Task(String taskName, String description) {
@@ -66,8 +74,7 @@ public class Task {
         if (this == null) {
             return "Нет такой задачи";
         }
-        return "id-'" + id + "' Название задачи-'" + taskName + "' Описание задачи-'"
-                + description + "' Статус задачи-'" + status;
+        return getId() +"," + getTasksType() +  "," + getTaskName()   + "," + getStatus()  +"," + getDescription() + ",";
     }
 }
 
