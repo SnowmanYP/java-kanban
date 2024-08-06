@@ -10,12 +10,6 @@ public class InMemoryHistoryManager implements HistoryManager {
 
     private Node head = null;
     private Node tail = null;
-    //Создайте HashMap — будет достаточно её стандартной реализации. В ключах будут храниться id задач, а в значениях
-    //Node — узлы связного списка. Изначально HashMap пустая. Она будет заполняться по мере добавления новых задач.
-    // Напишите реализацию метода add(Task task).
-    // Теперь с помощью HashMap и метода удаления removeNode метод add(Task task) будет быстро удалять задачу из списка,
-    // если она там есть, а затем вставлять её в конец двусвязного списка.
-    // После добавления задачи не забудьте обновить значение узла в HashMap.
 
     @Override
     public void add(Task task) { //должен помечать команды как просмотренные
@@ -82,10 +76,6 @@ public class InMemoryHistoryManager implements HistoryManager {
         }
         return tasks;
     }
-
-   /* private List<Task> getReversTasks() {
-
-    }*/
 
     private void removeNode(Node node) {
         //Т.З. - В качестве параметра этот метод должен принимать объект Node — узел связного списка — и удалять его.

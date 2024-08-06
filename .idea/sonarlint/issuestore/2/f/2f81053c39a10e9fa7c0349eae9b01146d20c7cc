@@ -1,32 +1,31 @@
 
 –
-java:S1104"SMake history a static final constant or non-public and provide accessors if needed.(úáéÁ8© ÍšŒ2J$11b7cab2-0367-46ea-9091-35d965b3a4d7
+java:S1104"SMake history a static final constant or non-public and provide accessors if needed.(úáéÁ8© ÍšŒ2J$35c75a0d-eae7-4527-aa40-efaaad4d4aa1
 
-java:S1104	"VMake historyMap a static final constant or non-public and provide accessors if needed.(…¸–åùÿÿÿÿ8© ÍšŒ2J$6b4447d9-6901-4088-beaa-5f97ef955bcd
+java:S1104	"VMake historyMap a static final constant or non-public and provide accessors if needed.(…¸–åùÿÿÿÿ8© ÍšŒ2J$92a3f1cc-4a3b-421a-9252-63301baf5636
 w
-java:S3740	"/Provide the parametrized type for this generic.(…¸–åùÿÿÿÿ8ª ÍšŒ2J$c13a7c13-43e6-4245-b49b-8dbeeeb1a228
+java:S3740	"/Provide the parametrized type for this generic.(…¸–åùÿÿÿÿ8ª ÍšŒ2J$83dce50e-13d9-462e-807a-42f58095508b
 r
-java:S3740"/Provide the parametrized type for this generic.(ë­ÎÖ8ª ÍšŒ2J$0b6db170-5278-4783-947d-102b3c97ae63
+java:S3740"/Provide the parametrized type for this generic.(ë­ÎÖ8ª ÍšŒ2J$027cf7c0-6945-4944-9b19-bf9acd745f86
 w
-java:S3740"/Provide the parametrized type for this generic.(Íî•Öşÿÿÿÿ8ª ÍšŒ2J$502929d5-fa7e-4d90-97fb-79228b1f4174
+java:S3740"/Provide the parametrized type for this generic.(Íî•Öşÿÿÿÿ8ª ÍšŒ2J$24385059-e21d-4aca-bef1-ab4255b9b141
 w
-java:S3740?"/Provide the parametrized type for this generic.(Àµ™éøÿÿÿÿ8ª ÍšŒ2J$8ee10ea7-adb2-481d-b2e1-49f405e12e43
+java:S37409"/Provide the parametrized type for this generic.(Àµ™éøÿÿÿÿ8ª ÍšŒ2J$3649e721-baf4-49e8-b91d-4a133696a89b
 w
-java:S3740?"/Provide the parametrized type for this generic.(Àµ™éøÿÿÿÿ8ª ÍšŒ2J$87ec0325-a220-4d57-b811-d3716378aca7
+java:S37409"/Provide the parametrized type for this generic.(Àµ™éøÿÿÿÿ8ª ÍšŒ2J$f6c1594a-f228-4f3e-86f8-ac1a15482f55
 w
-java:S3740D"/Provide the parametrized type for this generic.(ƒ‰›’şÿÿÿÿ8ª ÍšŒ2J$854581b2-4d7c-488c-ae04-e9138b37da65
+java:S3740>"/Provide the parametrized type for this generic.(ƒ‰›’şÿÿÿÿ8ª ÍšŒ2J$47db38ac-7956-4a80-8acf-9a7d7e1ec992
 w
-java:S3740D"/Provide the parametrized type for this generic.(ƒ‰›’şÿÿÿÿ8ª ÍšŒ2J$a919b8d5-a845-4e64-b790-f31e9cff23d7
+java:S3740>"/Provide the parametrized type for this generic.(ƒ‰›’şÿÿÿÿ8ª ÍšŒ2J$fe98f6a4-5808-470b-a97a-0170017c8279
 q
-java:S3740N"/Provide the parametrized type for this generic.(õ «g8ª ÍšŒ2J$cdb7b166-47f6-4e26-9fee-a79a91899041
+java:S3740H"/Provide the parametrized type for this generic.(õ «g8ª ÍšŒ2J$7c004629-06a9-4952-b853-371dd93e3a3b
 r
-java:S3740Z"/Provide the parametrized type for this generic.( ‰æ¡8ª ÍšŒ2J$7796c8bf-1de1-43ff-bd0f-6b277a63da48
+java:S3740P"/Provide the parametrized type for this generic.( ‰æ¡8ª ÍšŒ2J$29be0bf7-67ae-4212-abb4-a47ef0fd0cf2
 …
-java:S18544"BRemove this useless assignment to local variable "directOrRevers".(ÕüË£8° ÍšŒ2J$c22b9881-4ce8-466a-bb2a-3e1c93f2ec21
+java:S1854."BRemove this useless assignment to local variable "directOrRevers".(ÕüË£8° ÍšŒ2J$764e442f-0fb8-47d4-acd0-1671e2e2953f
 j
-java:S1905P"'Remove this unnecessary cast to "Task".(üÌÿß8³ ÍšŒ2J$1f9adc2f-b289-4763-84ef-3e226a7ff1a3
-~	java:S125V"<This block of commented-out lines of code should be removed.(£Ü÷ì8³ ÍšŒ2J$55173218-aa0d-483d-858a-531bfddf9709
+java:S1905J"'Remove this unnecessary cast to "Task".(üÌÿß8³ ÍšŒ2J$8bca8fbb-0d09-4b6f-b823-6ef373b0e23e
 o
-java:S1905^"'Remove this unnecessary cast to "Task".(İÙ˜ûÿÿÿÿ8³ ÍšŒ2J$a79c2ff8-584c-4821-b42e-d00dac25f027
-r	java:S106e"+Replace this use of System.out by a logger.(‹¨öŸüÿÿÿÿ8´ ÍšŒ2J$a77d3bb4-157e-4707-9fb5-3613427e9e3f
-m	java:S106f"+Replace this use of System.out by a logger.(Ü¡§8µ ÍšŒ2J$8e2628ba-e607-4893-aeba-8f8a2392f875
+java:S1905T"'Remove this unnecessary cast to "Task".(İÙ˜ûÿÿÿÿ8³ ÍšŒ2J$02dc1129-05b0-43b1-acbe-43aa4732b20d
+r	java:S106["+Replace this use of System.out by a logger.(‹¨öŸüÿÿÿÿ8´ ÍšŒ2J$b696a4ac-f3a6-4ef8-9349-7bbbe473a8f2
+m	java:S106\"+Replace this use of System.out by a logger.(Ü¡§8µ ÍšŒ2J$a223cb69-abfd-48b1-8bb7-7f778d8f2ec9
