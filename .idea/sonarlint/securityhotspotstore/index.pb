@@ -216,3 +216,11 @@ H
 test/tasks/TaskTest.java,6\2\62bbd125811b7b2ad6d7d4c6659712183ff9d78f
 T
 $src/manager/InMemoryTaskManager.java,a\a\aa928e2b414d2c845d9fdad53e0c5bb8aad86dc4
+V
+&src/manager/FileBackedTaskManager.java,b\1\b17764e4210f59ca78947af66953d6e6a432e7e1
+G
+src/task/TasksType.java,4\f\4fc65a5be16be1d86bfd36ea54794930312ba5b3
+8
+save.csv,c\a\ca353897e25df9092d1396274593ce989bf4ba69
+W
+'src/exception/ManagerSaveException.java,d\7\d779cc10363b7b698ae1f16d7eb93bb5521f7d85
