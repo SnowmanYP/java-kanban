@@ -5,14 +5,17 @@ import task.Epic;
 import task.SubTask;
 import task.Task;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
-    private HashMap<Integer, Epic> epicTasks = new HashMap<>();
-    private HashMap<Integer, SubTask> subTasks = new HashMap<>();
-    private HashMap<Integer, Task> tasks = new HashMap<>();
-    private static int ID;
+
+    protected HashMap<Integer, Epic> epicTasks = new HashMap<>();
+    protected HashMap<Integer, SubTask> subTasks = new HashMap<>();
+    protected HashMap<Integer, Task> tasks = new HashMap<>();
+
+    private static int id;
 
     private HistoryManager historyManager = Managers.getDefaultHistory(); // по ТЗ - статический метод
 
@@ -24,12 +27,16 @@ public class InMemoryTaskManager implements TaskManager {
         this.historyManager = historyManager;
     }
 
-    public static int getID() {
-        return ID;
+    public static int getId() {
+        return id;
+    }
+
+    public static void setId(int id) {
+        InMemoryTaskManager.id = id;
     }
 
     protected static int generateId() {
-        return ++ID;
+        return ++id;
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~/УНИВЕРСАЛЬНЫЕ МЕТОДЫ ДЛЯ ЗАДАЧ КЛАССА --Task, Epic, SubTask --/~~~~~~~~~~~~~~~~~~~~//
 
@@ -51,8 +58,12 @@ public class InMemoryTaskManager implements TaskManager {
         if (epicTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : epicTasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле id-'" + epicTasks.get(i).getId() + "' Название задачи-'" + epicTasks.get(i).getTaskName() + "' Описание задачи-'" + epicTasks.get(i).getDescription() + "' Статус задачи-'" + epicTasks.get(i).getStatus() + "'");
+                System.out.println(epicTasks.get(i).toString());
         }
+    }
+
+    public List getAllEpicTask() {
+        return new ArrayList<>(epicTasks.values());
     }
 
     @Override
@@ -180,8 +191,12 @@ public class InMemoryTaskManager implements TaskManager {
         if (subTasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : subTasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле id-'" + subTasks.get(i).getId() + "' Название задачи-'" + subTasks.get(i).getTaskName() + "' Описание задачи-'" + subTasks.get(i).getDescription() + "' Статус задачи-'" + subTasks.get(i).getStatus() + "'" + " epicID-'" + subTasks.get(i).getEpicID() + "'");
+                System.out.println(subTasks.get(i).toString());
         }
+    }
+
+    public List getAllSubTask() {
+        return new ArrayList<>(subTasks.values());
     }
 
     @Override
@@ -300,8 +315,12 @@ public class InMemoryTaskManager implements TaskManager {
         if (tasks.isEmpty()) System.out.println("Нет задач в списке");
         else {
             for (Integer i : tasks.keySet())
-                System.out.println("ID_Key-'" + i + "' поле_id-'" + tasks.get(i).getId() + "' Название задачи-'" + tasks.get(i).getTaskName() + "' Описание задачи-'" + tasks.get(i).getDescription() + "' Статус задачи-'" + tasks.get(i).getStatus() + "'");
+                System.out.println(tasks.get(i).toString());
         }
+    }
+
+    public List getAllTask() {
+        return new ArrayList<>(tasks.values());
     }
 
     @Override
@@ -365,6 +384,7 @@ public class InMemoryTaskManager implements TaskManager {
         System.out.println("Задача удалена");
     }
 
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //Приводит в соответствие статусы Epiс и Sub
     private void recalcOfStatus() {
         for (Epic o : epicTasks.values()) {
@@ -385,3 +405,5 @@ public class InMemoryTaskManager implements TaskManager {
         }
     }
 }
+
+

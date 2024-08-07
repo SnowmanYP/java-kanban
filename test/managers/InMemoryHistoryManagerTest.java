@@ -22,7 +22,7 @@ class InMemoryHistoryManagerTest {
     void shouldReturnListEquality() { //Сравниваем историю с контрольным списком
         Task task;
         InMemoryTaskManager manager = new InMemoryTaskManager();
-        for (int i = InMemoryTaskManager.getID(); i <= 10; i++) {
+        for (int i = InMemoryTaskManager.getId(); i <= 10; i++) {
             task = new Task("task number " + (i + 1), "description of task " + (i + 1));
             task.setStatus(Status.NEW);
             manager.createTask(task); //создаем задачу - здесь ID увеличивается на единицу, поэтому getTask(i+1)
