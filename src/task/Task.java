@@ -5,11 +5,11 @@ import status.Status;
 import java.util.Objects;
 
 public class Task {
-    private Integer id;
-    private String taskName;
-    private String description;
-    private Status status;
-    private TasksType tasksType = TasksType.TASK;
+    protected Integer id;
+    protected String taskName;
+    protected String description;
+    protected Status status;
+    protected TasksType tasksType = TasksType.TASK;
 
     public void setTasksType(TasksType tasksType) {
         this.tasksType = tasksType;

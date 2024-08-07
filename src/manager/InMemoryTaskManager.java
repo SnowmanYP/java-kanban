@@ -5,13 +5,15 @@ import task.Epic;
 import task.SubTask;
 import task.Task;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
-    protected static HashMap<Integer, Epic> epicTasks = new HashMap<>();
-    protected static HashMap<Integer, SubTask> subTasks = new HashMap<>();
-    protected static HashMap<Integer, Task> tasks = new HashMap<>();
+
+    protected HashMap<Integer, Epic> epicTasks = new HashMap<>();
+    protected HashMap<Integer, SubTask> subTasks = new HashMap<>();
+    protected HashMap<Integer, Task> tasks = new HashMap<>();
 
     private static int id;
 
@@ -58,6 +60,10 @@ public class InMemoryTaskManager implements TaskManager {
             for (Integer i : epicTasks.keySet())
                 System.out.println(epicTasks.get(i).toString());
         }
+    }
+
+    public List getAllEpicTask() {
+        return new ArrayList<>(epicTasks.values());
     }
 
     @Override
@@ -189,6 +195,10 @@ public class InMemoryTaskManager implements TaskManager {
         }
     }
 
+    public List getAllSubTask() {
+        return new ArrayList<>(subTasks.values());
+    }
+
     @Override
     public void deleteAllSubTasks() { // b. Удаление всех подзадач.
         subTasks.clear();
@@ -307,6 +317,10 @@ public class InMemoryTaskManager implements TaskManager {
             for (Integer i : tasks.keySet())
                 System.out.println(tasks.get(i).toString());
         }
+    }
+
+    public List getAllTask() {
+        return new ArrayList<>(tasks.values());
     }
 
     @Override

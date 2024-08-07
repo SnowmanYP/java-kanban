@@ -6,9 +6,8 @@ public class Epic extends Task {
         return tasksType;
     }
 
-    private TasksType tasksType = TasksType.EPIC;
-
     public Epic(String taskName, String description) {
         super(taskName, description);
+        tasksType = TasksType.EPIC;
     }
 }

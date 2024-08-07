@@ -3,10 +3,9 @@ import task.Epic;
 import task.SubTask;
 import task.Task;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -37,11 +36,10 @@ public class Main {
         backedManager.printAllEpicTasks();
         backedManager.printAllSubTasks();
         System.out.println("\nСмотрю файл");
-        BufferedReader bf = new BufferedReader(new FileReader(file));
-        while (bf.readLine() != null) {
-            System.out.println(bf.readLine());
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            System.out.println(scanner.nextLine());
         }
-        bf.close();
 //~~~~~~~~~~~~~~~~~~~~~~~~~~Восстановление из файла - полный тест~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         System.out.println("\nУдаляю все задачи");
         backedManager.deleteAllTasks(); //Удаляем задачи
@@ -51,11 +49,36 @@ public class Main {
         backedManager.printAllEpicTasks();
         backedManager.printAllSubTasks();
         System.out.println("\nВосстанавливаю данные из файла");
-        FileBackedTaskManager.loadFromFile(file);
+        backedManager = FileBackedTaskManager.loadFromFile(file);
         backedManager.printAllTasks();
         backedManager.printAllEpicTasks();
         backedManager.printAllSubTasks();
         System.out.println("It's Ok!");
         //File.createTempFile(…) - пригодится, но не этой стадии проекта
+        //пройдемся по предложенному скрипту
+        File test = new File("test.txt"); //файл для теста
+        FileBackedTaskManager fileManager = new FileBackedTaskManager(test); // создаем менеджер для записи в файл
+        Task newTask = new Task("task1", "Купить автомобиль");
+        fileManager.createTask(newTask);
+        Epic newEpic = new Epic("new Epic1", "Новый Эпик");
+        fileManager.createEpicTask(newEpic);
+        SubTask newSubTask = new SubTask("New Subtask", "Подзадача", newEpic.getId());
+        SubTask newSubTask2 = new SubTask("New Subtask2", "Подзадача2", newEpic.getId());
+        fileManager.createSubTask(newSubTask);
+        fileManager.createSubTask(newSubTask2);
+        System.out.println("\nПосмотрим что в файле:");
+        scanner = new Scanner(test);
+        while (scanner.hasNextLine()) {
+            System.out.println(scanner.nextLine());
+        }
+        System.out.println();
+        FileBackedTaskManager fileManager2 = FileBackedTaskManager.loadFromFile(test);
+        // создаем менеджер для считывания из файла
+        System.out.println("Посмотрим что в памяти:");
+        fileManager.printAllTasks(); //Проверяем что теперь в памяти менеджера
+        fileManager2.printAllEpicTasks();
+        fileManager2.printAllSubTasks(); //Есть совпадение
+        System.out.println("ID = " + fileManager2.currentId()); //проверка ID
+        System.out.println("It's Ok. Отличие только в заголовке - так и должно быть!");
     }
 }

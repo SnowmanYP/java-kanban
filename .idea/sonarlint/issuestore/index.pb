@@ -224,3 +224,7 @@ G
 save.csv,c\a\ca353897e25df9092d1396274593ce989bf4ba69
 W
 'src/exception/ManagerSaveException.java,d\7\d779cc10363b7b698ae1f16d7eb93bb5521f7d85
+J
+src/manager/CSVFormat.java,0\e\0ea890a6940b5ba737dd8c64f66bb07a7ca7a7e6
+8
+test.txt,4\b\4b6fcb2d521ef0fd442a5301e7932d16cc9f375a
