@@ -1,7 +1,12 @@
 package task;
 
 public class SubTask extends Task {
-    protected Integer epicID;
+    private Integer epicID;
+
+    @Override
+    public TasksType getTasksType() {
+        return tasksType;
+    }
 
     public Integer getEpicID() {
         return epicID;
@@ -14,6 +19,7 @@ public class SubTask extends Task {
     public SubTask(String taskName, String description, Integer epicID) {
         super(taskName, description);
         this.epicID = epicID;
+        tasksType = TasksType.SUBTASK;
     }
 
     @Override
@@ -21,6 +27,7 @@ public class SubTask extends Task {
         if (this == null) {
             return "Нет такой задачи";
         }
-        return "id-'" + this.getId() + "' Название задачи-'" + this.getTaskName() + "' Описание задачи-'" + this.getDescription() + "' Статус задачи-'" + this.getStatus() + "' epicID-'" + epicID + "'";
+        return getId() + "," + getTasksType() + "," + getTaskName() + "," + getStatus() + "," + getDescription()
+                + "," + getEpicID();
     }
 }
