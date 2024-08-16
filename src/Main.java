@@ -81,4 +81,4 @@ public class Main {
         System.out.println("ID = " + fileManager2.currentId()); //проверка ID
         System.out.println("It's Ok. Отличие только в заголовке - так и должно быть!");
     }
-}
+} 

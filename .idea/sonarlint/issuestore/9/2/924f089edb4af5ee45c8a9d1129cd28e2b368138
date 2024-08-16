@@ -1,19 +1,19 @@
 
-ˆ
-java:S2095F"EUse try-with-resources or close this "Scanner" in a "finally" clause.(İ‚¥ç8ß‚Ìö’2J$66d79e16-ea0a-418e-91f4-db73fa89c84f
 
-java:S2095'"EUse try-with-resources or close this "Scanner" in a "finally" clause.(Èñ¾„ıÿÿÿÿ8ß‚Ìö’2J$63db4654-ce30-40f1-9a56-ac14ac7d05b0
-m	java:S106"+Replace this use of System.out by a logger.(ˆı8ã‚Ìö’2J$1affb842-9147-4bd4-ad9c-34c410141cb9
-m	java:S106""+Replace this use of System.out by a logger.(È“ÉÃ8å‚Ìö’2J$94a5a513-7567-4069-9bd2-44745bb9ddbc
-r	java:S106&"+Replace this use of System.out by a logger.(›àˆëÿÿÿÿÿ8å‚Ìö’2J$0b697cce-fb03-4741-914c-4ffc82f8d88a
-m	java:S106)"+Replace this use of System.out by a logger.(Š¤›¢8è‚Ìö’2J$38519118-ded2-4734-aca3-489cdfab8877
-m	java:S106,"+Replace this use of System.out by a logger.(İøÒÜ8è‚Ìö’2J$c6f86994-c850-43f2-90cd-8f6a57974ae6
-m	java:S106/"+Replace this use of System.out by a logger.(î³»8è‚Ìö’2J$920afb3e-4796-4a99-afc7-06c86951c813
-l	java:S1063"+Replace this use of System.out by a logger.(ßÀA8é‚Ìö’2J$cc86f4e1-2d2e-4005-a2bc-5e8cb99a2a4a
-r	java:S1068"+Replace this use of System.out by a logger.(ƒèùÙşÿÿÿÿ8é‚Ìö’2J$4154052e-a790-4200-8dc5-7387c7b9ce97
-m	java:S106E"+Replace this use of System.out by a logger.(™²ÖÊ8ê‚Ìö’2J$9aa6037d-f343-4135-bfd1-b6a2d4bd103a
-m	java:S106H"+Replace this use of System.out by a logger.(Š¤›¢8ê‚Ìö’2J$b1a4d54b-3c05-4759-8b66-fb1faebb429a
-r	java:S106J"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ê‚Ìö’2J$e41eb837-f96a-4e07-9aa9-dfed3b28a0fd
-m	java:S106M"+Replace this use of System.out by a logger.(¯ÃÉ˜8ë‚Ìö’2J$b5e98e2b-040e-4b35-bddc-3f08708b8d22
-m	java:S106Q"+Replace this use of System.out by a logger.(Ì×¡ú8ë‚Ìö’2J$90d075bd-7a67-4b8e-a748-f369784dd346
-m	java:S106R"+Replace this use of System.out by a logger.(áò¢õ8ë‚Ìö’2J$70045bd6-57a8-4d1c-b796-22c0b20dc539
+java:S2095'"EUse try-with-resources or close this "Scanner" in a "finally" clause.(Èñ¾„ıÿÿÿÿ8ß‚Ìö’2J$3e4c2d69-b730-43ec-8e56-8f4bad0b1239
+ˆ
+java:S2095F"EUse try-with-resources or close this "Scanner" in a "finally" clause.(İ‚¥ç8ß‚Ìö’2J$a6059d85-a39b-4c3e-8680-a7de915d3b40
+m	java:S106"+Replace this use of System.out by a logger.(ˆı8ã‚Ìö’2J$77115b5d-dc6c-40af-bce7-54714df66085
+m	java:S106""+Replace this use of System.out by a logger.(È“ÉÃ8å‚Ìö’2J$b03ccc47-a40d-4abe-a64c-8ef5e658e722
+r	java:S106&"+Replace this use of System.out by a logger.(›àˆëÿÿÿÿÿ8å‚Ìö’2J$095ef1ce-2bd1-48a0-a302-bafb6a46a312
+m	java:S106)"+Replace this use of System.out by a logger.(Š¤›¢8è‚Ìö’2J$3a2cd892-3ec6-4910-9220-cdca68334d85
+m	java:S106,"+Replace this use of System.out by a logger.(İøÒÜ8è‚Ìö’2J$b1a4c0bb-d968-4fbd-a870-f85225a3141d
+m	java:S106/"+Replace this use of System.out by a logger.(î³»8è‚Ìö’2J$bf090a2e-28e3-463f-8bc8-d16daa0caf4d
+l	java:S1063"+Replace this use of System.out by a logger.(ßÀA8é‚Ìö’2J$91874c79-2592-4c66-9a6b-bfbe27322fdb
+r	java:S1068"+Replace this use of System.out by a logger.(ƒèùÙşÿÿÿÿ8é‚Ìö’2J$bfea1e68-8754-44a9-ae2e-c76ff5bb9ead
+m	java:S106E"+Replace this use of System.out by a logger.(™²ÖÊ8ê‚Ìö’2J$50a55538-013d-4e9d-8c2d-499ecd42f597
+m	java:S106H"+Replace this use of System.out by a logger.(Š¤›¢8ê‚Ìö’2J$b7d4462c-730d-4aa0-a8ce-3112502c5177
+r	java:S106J"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ê‚Ìö’2J$91542c99-68ce-4677-a9f6-cf529bd9010e
+m	java:S106M"+Replace this use of System.out by a logger.(¯ÃÉ˜8ë‚Ìö’2J$abe4d840-d5a8-4119-848b-0cb44556e513
+m	java:S106Q"+Replace this use of System.out by a logger.(Ì×¡ú8ë‚Ìö’2J$fc8809d7-8f33-4231-891d-bd3bf02ae028
+m	java:S106R"+Replace this use of System.out by a logger.(áò¢õ8ë‚Ìö’2J$93bf126a-66b0-466e-a19d-e717f7a5734e
